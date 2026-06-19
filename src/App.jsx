@@ -21,21 +21,35 @@ function App() {
       <p>Em breve aqui a nossa calculadora de Honkai Star Rail!</p>
       <p>O custo total é: {custoTotal}</p>
       <h2>Time 1</h2>
-      <select>
-        {personagens.map(p => (
-          <option key={p.nome} value={p.nome}>
-          {p.nome}
-          </option>
+      <div className="time-container">
+        {time1.map((slot, index) => (
+          <div key={index} className="slot-container">
+            <span>Slot {index + 1}: </span>
+            <select value={slot.personagem}>
+              {personagens.map(p => (
+                <option key={p.nome} value={p.nome}>
+                  {p.nome}
+                </option>
+              ))}
+            </select>
+          </div>
         ))}
-      </select>
+      </div>
       <h2>Time 2</h2>
-      <select>
-        {personagens.map(p => (
-          <option key={p.nome} value={p.nome}>
-          {p.nome}
-          </option>
+      <div className="time-container">
+        {time2.map((slot, index) => (
+          <div key={index} className="slot-container">
+            <span>Slot {index + 1}: </span>
+            <select value={slot.personagem}>
+              {personagens.map(p => (
+                <option key={p.nome} value={p.nome}>
+                  {p.nome}
+                </option>
+              ))}
+            </select>
+          </div>
         ))}
-      </select>
+      </div>
     </div>
   )
 }
