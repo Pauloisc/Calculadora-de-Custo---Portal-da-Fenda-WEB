@@ -20,6 +20,22 @@ function App() {
       <h1>Portal da Fenda - Calculadora de Custos</h1>
       <p>Em breve aqui a nossa calculadora de Honkai Star Rail!</p>
       <p>O custo total é: {custoTotal}</p>
+      <h2>Time 1</h2>
+      <select>
+        {personagens.map(p => (
+          <option key={p.nome} value={p.nome}>
+          {p.nome}
+          </option>
+        ))}
+      </select>
+      <h2>Time 2</h2>
+      <select>
+        {personagens.map(p => (
+          <option key={p.nome} value={p.nome}>
+          {p.nome}
+          </option>
+        ))}
+      </select>
     </div>
   )
 }
