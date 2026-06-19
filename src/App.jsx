@@ -14,6 +14,16 @@ function App() {
   const [time1, setTime1] = useState(timeInicial);
   const [time2, setTime2] = useState(timeInicial);
   const [custoAdicional, setCustoAdicional] = useState(0);
+
+  const atualizarSlot = (time, setTime, index, campo, valor) => {
+    const novoTime = [...time];
+    novoTime[index] = {
+      ...novoTime[index],
+      [campo]: valor
+    };
+    setTime(novoTime);
+  };
+
   let custoTotal = calcularCustoTotal(time1,time2,custoAdicional);
   return (
     <div className="app-container">
@@ -25,7 +35,12 @@ function App() {
         {time1.map((slot, index) => (
           <div key={index} className="slot-container">
             <span>Slot {index + 1}: </span>
-            <select value={slot.personagem}>
+            <select
+              value={slot.personagem}
+              onChange={(event) => {
+                atualizarSlot(time1, setTime1, index, "personagem", event.target.value)
+              }}
+            >
               {personagens.map(p => (
                 <option key={p.nome} value={p.nome}>
                   {p.nome}
@@ -40,7 +55,12 @@ function App() {
         {time2.map((slot, index) => (
           <div key={index} className="slot-container">
             <span>Slot {index + 1}: </span>
-            <select value={slot.personagem}>
+            <select
+              value={slot.personagem}
+              onChange={(event) => {
+                atualizarSlot(time2, setTime2, index, "personagem", event.target.value)
+              }}
+            >
               {personagens.map(p => (
                 <option key={p.nome} value={p.nome}>
                   {p.nome}
