@@ -19,11 +19,15 @@ export function calcularCustoTotal(time1, time2, extra){
     let custoTotal = 0;
     time1.forEach(slot => {
         custoTotal += calcularCustoPersonagem(slot.personagem, slot.eidolons);
-        custoTotal += calcularCustoCone(slot.cone, slot.sobreposicao);
+        if(slot.personagem != "Nada"){
+            custoTotal += calcularCustoCone(slot.cone, slot.sobreposicao);
+        }
     });
     time2.forEach(slot => {
         custoTotal += calcularCustoPersonagem(slot.personagem, slot.eidolons);
-        custoTotal += calcularCustoCone(slot.cone, slot.sobreposicao);
+        if(slot.personagem != "Nada"){
+            custoTotal += calcularCustoCone(slot.cone, slot.sobreposicao);
+        }
     });
     return custoTotal += extra;;
 }
