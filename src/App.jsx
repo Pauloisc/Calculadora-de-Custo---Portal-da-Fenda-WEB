@@ -24,17 +24,20 @@ function App() {
     setTime(novoTime);
   };
 
-  let custoTotal = calcularCustoTotal(time1,time2,custoAdicional);
+  let custoTotal = calcularCustoTotal(time1, time2, custoAdicional);
+
   return (
     <div className="app-container">
       <h1>Portal da Fenda - Calculadora de Custos</h1>
-      <p>Em breve aqui a nossa calculadora de Honkai Star Rail!</p>
       <p>O custo total é: {custoTotal}</p>
+
       <h2>Time 1</h2>
       <div className="time-container">
         {time1.map((slot, index) => (
           <div key={index} className="slot-container">
-            <span>Slot {index + 1}: </span>
+            <label>Slot {index + 1}</label>
+
+            {/* Dropdown do Personagem */}
             <select
               value={slot.personagem}
               onChange={(event) => {
@@ -42,19 +45,54 @@ function App() {
               }}
             >
               {personagens.map(p => (
-                <option key={p.nome} value={p.nome}>
-                  {p.nome}
-                </option>
+                <option key={p.nome} value={p.nome}>{p.nome}</option>
               ))}
             </select>
+
+            {/* Input de Eidolons */}
+            <input
+              type="number"
+              min={0}
+              max={6}
+              value={slot.eidolons}
+              onChange={(event) => {
+                atualizarSlot(time1, setTime1, index, "eidolons", Number(event.target.value))
+              }}
+            />
+
+            {/* Dropdown do Cone */}
+            <select
+              value={slot.cone}
+              onChange={(event) => {
+                atualizarSlot(time1, setTime1, index, "cone", event.target.value)
+              }}
+            >
+              {Object.keys(cones).map(nomeCone => (
+                <option key={nomeCone} value={nomeCone}>{nomeCone}</option>
+              ))}
+            </select>
+
+            {/* Input de Sobreposição */}
+            <input
+              type="number"
+              min={1}
+              max={5}
+              value={slot.sobreposicao}
+              onChange={(event) => {
+                atualizarSlot(time1, setTime1, index, "sobreposicao", Number(event.target.value))
+              }}
+            />
           </div>
         ))}
       </div>
+
       <h2>Time 2</h2>
       <div className="time-container">
         {time2.map((slot, index) => (
           <div key={index} className="slot-container">
-            <span>Slot {index + 1}: </span>
+            <label>Slot {index + 1}</label>
+
+            {/* Dropdown do Personagem */}
             <select
               value={slot.personagem}
               onChange={(event) => {
@@ -62,13 +100,55 @@ function App() {
               }}
             >
               {personagens.map(p => (
-                <option key={p.nome} value={p.nome}>
-                  {p.nome}
-                </option>
+                <option key={p.nome} value={p.nome}>{p.nome}</option>
               ))}
             </select>
+
+            {/* Input de Eidolons */}
+            <input
+              type="number"
+              min={0}
+              max={6}
+              value={slot.eidolons}
+              onChange={(event) => {
+                atualizarSlot(time2, setTime2, index, "eidolons", Number(event.target.value))
+              }}
+            />
+
+            {/* Dropdown do Cone */}
+            <select
+              value={slot.cone}
+              onChange={(event) => {
+                atualizarSlot(time2, setTime2, index, "cone", event.target.value)
+              }}
+            >
+              {Object.keys(cones).map(nomeCone => (
+                <option key={nomeCone} value={nomeCone}>{nomeCone}</option>
+              ))}
+            </select>
+
+            {/* Input de Sobreposição */}
+            <input
+              type="number"
+              min={1}
+              max={5}
+              value={slot.sobreposicao}
+              onChange={(event) => {
+                atualizarSlot(time2, setTime2, index, "sobreposicao", Number(event.target.value))
+              }}
+            />
           </div>
         ))}
+      </div>
+
+      {/* Input de custo adicional */}
+      <div>
+        <label>Custo Adicional: </label>
+        <input
+          type="number"
+          value={custoAdicional}
+          onChange={(event) => setCustoAdicional(Number(event.target.value))}
+        />
       </div>
     </div>
   )
