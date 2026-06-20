@@ -1,7 +1,7 @@
 import './App.css'
 import { useState } from 'react';
 import { personagens, TIER_RULES, cones } from './data/personagem';
-import { calcularCustoPersonagem, calcularCustoCone, calcularCustoTotal } from './utils/calculos';
+import { calcularCustoPersonagem, calcularCustoCone, calcularCustoTotal, calcularCustoTime } from './utils/calculos';
 
 const timeInicial = [
   { personagem: "Nada", eidolons: 0, cone: "Nada", sobreposicao: 1 },
@@ -24,12 +24,13 @@ function App() {
     setTime(novoTime);
   };
 
-  let custoTotal = calcularCustoTotal(time1, time2, custoAdicional);
+  let custoTotal = calcularCustoTotal(time1, time2, custoAdicional)
+  let custoT1 = calcularCustoTime(time1)
+  let custoT2 = calcularCustoTime(time2)
 
   return (
     <div className="app-container">
       <h1>Portal da Fenda - Calculadora de Custos</h1>
-      <p>O custo total é: {custoTotal}</p>
 
       <h2>Time 1</h2>
       <div className="time-container">
@@ -85,6 +86,7 @@ function App() {
           </div>
         ))}
       </div>
+      <p>Custo: {custoT1}</p>
 
       <h2>Time 2</h2>
       <div className="time-container">
@@ -140,6 +142,7 @@ function App() {
           </div>
         ))}
       </div>
+      <p>Custo: {custoT2}</p>
 
       {/* Input de custo adicional */}
       <div>
@@ -150,6 +153,7 @@ function App() {
           onChange={(event) => setCustoAdicional(Number(event.target.value))}
         />
       </div>
+      <p>O custo total é: {custoTotal}</p>
     </div>
   )
 }

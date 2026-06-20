@@ -15,6 +15,17 @@ export function calcularCustoCone(nomeCone, sobreposicao){
     return custo;
 }
 
+export function calcularCustoTime(time){
+    let custoTime = 0;
+    time.forEach(slot => {
+        custoTime += calcularCustoPersonagem(slot.personagem, slot.eidolons);
+        if(slot.personagem != "Nada"){
+            custoTime += calcularCustoCone(slot.cone, slot.sobreposicao);
+        }
+    });
+    return custoTime;
+}
+
 export function calcularCustoTotal(time1, time2, extra){
     let custoTotal = 0;
     time1.forEach(slot => {
