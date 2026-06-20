@@ -1,4 +1,6 @@
 .app-container {
   background-color: #1a1a2e;
-  color: #ffffff;
+  color: #ffffff;   
+  min-height: 100vh;    
+  padding: 24px;       
 }
