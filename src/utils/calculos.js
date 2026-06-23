@@ -21,8 +21,8 @@ export function calcularCustoTime(time){
         custoTime += calcularCustoPersonagem(slot.personagem, slot.eidolons);
         const dadosPersonagem = personagens.find(p => p.nome === slot.personagem);
         if (dadosPersonagem && dadosPersonagem.partner && dadosPersonagem.partner !== "Nada") {
-            time.forEach(slot => {
-                if(slot.personagem == dadosPersonagem.partner){
+            time.forEach(s => {
+                if(s.personagem == dadosPersonagem.partner){
                     custoTime += 1;
                 }
             });
