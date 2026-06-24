@@ -18,9 +18,9 @@ export function calcularCustoCone(nomeCone, sobreposicao){
 export function calcularCustoTime(time){
     let custoTime = 0;
     time.forEach(slot => {
-        if (slot.personagem === "Nada") {
-            custoTime -= 1.5;
-            return; 
+        if (slot.personagem === "Nada" || !slot.personagem) {
+            custoTime -= 1.5; 
+            return;
         }
         custoTime += calcularCustoPersonagem(slot.personagem, slot.eidolons);
         custoTime += calcularCustoCone(slot.cone, slot.sobreposicao);
