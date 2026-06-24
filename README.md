@@ -1,16 +1,91 @@
-# React + Vite
+# 🌀 Portal da Fenda — Calculadora de Custos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Calculadora de custos de times para o modo **Fenda da Memória** de **Honkai: Star Rail**.
 
-Currently, two official plugins are available:
+Permite montar dois times com até 4 personagens cada, configurando eidolons, cones de luz e sobreposição, e calcula automaticamente o custo total do setup com base nas regras de tier.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Acesse online:** [portal-da-fenda.vercel.app](https://calculadora-de-custo-paulo24.vercel.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+- Seleção de personagens com foto e tier automático
+- Configuração de **eidolons** (E0–E6) por personagem
+- Seleção de **cone de luz** com cálculo de custo por tier (T3–T5)
+- Configuração de **sobreposição** do cone (S1–S5)
+- Cálculo automático de custo por time e custo total
+- Bônus automático para personagens parceiros (ex: Ashveil + Mortenax Blade)
+- Campo de **custo adicional** manual
+- Layout responsivo: grade 2×2 por time no PC, empilhado no celular
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧮 Regras de Custo
+
+### Personagens (por tier)
+
+| Tier | Base | Por Eidolon |
+|------|------|-------------|
+| Error | 2 | +1.5 |
+| Pilares do Meta | 1 | +1.5 |
+| Brilhantes | 0.5 | +1 |
+| Coringas | 0 | +0.5 |
+| Neutros | 0 | 0 |
+| Quebra Galho | -0.5 | 0 |
+| Fundo do Poço | -1 | 0 |
+| Slot vazio | -1.5 | — |
+
+### Cones de Luz
+
+| Cone | Base | Por Sobreposição extra |
+|------|------|------------------------|
+| Cone T5 | +1.0 | +0.25 |
+| Cone T5 da Loja da Herta | 0 | 0 |
+| Cone T4 | 0 | 0 |
+| Cone T3 | -0.5 | 0 |
+| Sem cone (Nada) | -1.0 | 0 |
+
+> Personagens em slots vazios não têm custo de cone aplicado.
+
+---
+
+## 🛠️ Tecnologias
+
+- [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- CSS puro com layout responsivo (Flexbox + Grid)
+- Deploy via [Vercel](https://vercel.com/)
+
+---
+
+## 🚀 Rodando localmente
+
+```bash
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+```
+
+Acesse em `http://localhost:5173`
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── App.jsx              # Componente principal com os dois times
+├── App.css              # Estilos dos componentes
+├── data/
+│   └── personagem.js   # Lista de personagens, cones e regras de tier
+└── utils/
+    └── calculos.js     # Lógica de cálculo de custo
+```
+
+---
+
+## 👤 Autor
+
+Desenvolvido por **Paulo Ítalo** como ferramenta de apoio para a comunidade brasileira de Honkai: Star Rail.
