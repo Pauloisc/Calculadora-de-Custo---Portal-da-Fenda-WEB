@@ -1,6 +1,6 @@
 # 🌀 Portal da Fenda — Calculadora de Custos
 
-Calculadora de custos de times para o evento **Portal da Fenda**, um evento de PvP para o jogo **Honkai: Star Rail** feito para o servidor do Discord do criador de ceonteúdo [Mimzy](https://www.youtube.com/@mimzy_official)
+Calculadora de custos de times para o evento **Portal da Fenda**, um evento de PvP para o jogo **Honkai: Star Rail** feito para o servidor do Discord do criador de conteúdo [Mimzy](https://www.youtube.com/@mimzy_official)
 
 Permite montar dois times com até 4 personagens cada, configurando eidolons, cones de luz e sobreposição, e calcula automaticamente o custo total do setup com base nas regras de tier.
 
