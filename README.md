@@ -1,6 +1,6 @@
 # 🌀 Portal da Fenda — Calculadora de Custos
 
-Calculadora de custos de times para o modo **Fenda da Memória** de **Honkai: Star Rail**.
+Calculadora de custos de times para o evento **Portal da Fenda**, um evento de PvP para o jogo **Honkai: Star Rail** feito para o servidor do Discord do criador de ceonteúdo [Mimzy](https://www.youtube.com/@mimzy_official)
 
 Permite montar dois times com até 4 personagens cada, configurando eidolons, cones de luz e sobreposição, e calcula automaticamente o custo total do setup com base nas regras de tier.
 
@@ -10,7 +10,7 @@ Permite montar dois times com até 4 personagens cada, configurando eidolons, co
 
 ## ✨ Funcionalidades
 
-- Seleção de personagens com foto e tier automático
+- Seleção de personagens com foto
 - Configuração de **eidolons** (E0–E6) por personagem
 - Seleção de **cone de luz** com cálculo de custo por tier (T3–T5)
 - Configuração de **sobreposição** do cone (S1–S5)
@@ -21,7 +21,7 @@ Permite montar dois times com até 4 personagens cada, configurando eidolons, co
 
 ---
 
-## 🧮 Regras de Custo
+## Regras de Custo
 
 ### Personagens (por tier)
 
