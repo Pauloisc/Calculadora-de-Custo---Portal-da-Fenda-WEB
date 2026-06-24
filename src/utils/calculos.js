@@ -20,15 +20,18 @@ export function calcularCustoTime(time){
     time.forEach(slot => {
         custoTime += calcularCustoPersonagem(slot.personagem, slot.eidolons);
         const dadosPersonagem = personagens.find(p => p.nome === slot.personagem);
-        if (dadosPersonagem && dadosPersonagem.partner && dadosPersonagem.partner !== "Nada") {
+        if(slot.personagem != "Nada"){
+            custoTime += calcularCustoCone(slot.cone, slot.sobreposicao);
+            if (dadosPersonagem && dadosPersonagem.partner && dadosPersonagem.partner !== "Nada") {
             time.forEach(s => {
                 if(s.personagem == dadosPersonagem.partner){
                     custoTime += 1;
                 }
             });
         }
-        if(slot.personagem != "Nada"){
-            custoTime += calcularCustoCone(slot.cone, slot.sobreposicao);
+        }
+        else{
+            custoTime -= 1.5;
         }
     });
     return custoTime;
