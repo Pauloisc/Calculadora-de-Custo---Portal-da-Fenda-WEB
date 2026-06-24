@@ -4,7 +4,7 @@ Calculadora de custos de times para o modo **Fenda da Memória** de **Honkai: St
 
 Permite montar dois times com até 4 personagens cada, configurando eidolons, cones de luz e sobreposição, e calcula automaticamente o custo total do setup com base nas regras de tier.
 
-🔗 **Acesse online:** [portal-da-fenda.vercel.app](https://calculadora-de-custo-paulo24.vercel.app/)
+🔗 **Acesse online:** [portal-da-fenda.vercel.app](https://calculadora-de-custo-portal-da-fend.vercel.app/)
 
 ---
 
