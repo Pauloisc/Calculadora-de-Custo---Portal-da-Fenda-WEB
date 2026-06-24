@@ -31,119 +31,145 @@ function App() {
   return (
     <div className="app-container">
       <h1>Portal da Fenda - Calculadora de Custos</h1>
+      <div className="times-wrapper">
+        <div className="time-section">
+          <h2>Time 1</h2>
+          <p>Custo: {custoT1}</p>
+          <div className="time-container">
+            {time1.map((slot, index) => {
+              const dadosPersonagem = personagens.find(p => p.nome === slot.personagem) || { imagem: "ID" };
+              return(
+                <div key={index} className="slot-container">
+                  <img 
+                    src={dadosPersonagem && dadosPersonagem.imagem !== "ID" 
+                      ? `https://lh3.googleusercontent.com/d/${dadosPersonagem.imagem}` 
+                      : "https://placehold.co/150x150/2e303a/ffffff?text=?"
+                    } 
+                    alt={slot.personagem} 
+                    className="slot-avatar"
+                  />
+                  <label>Slot {index + 1}</label>
 
-      <h2>Time 1</h2>
-      <div className="time-container">
-        {time1.map((slot, index) => (
-          <div key={index} className="slot-container">
-            <label>Slot {index + 1}</label>
+                  {/* Dropdown do Personagem */}
+                  <select
+                    value={slot.personagem}
+                    onChange={(event) => {
+                      atualizarSlot(time1, setTime1, index, "personagem", event.target.value)
+                    }}
+                  >
+                    {personagens.map(p => (
+                      <option key={p.nome} value={p.nome}>{p.nome}</option>
+                    ))}
+                  </select>
 
-            {/* Dropdown do Personagem */}
-            <select
-              value={slot.personagem}
-              onChange={(event) => {
-                atualizarSlot(time1, setTime1, index, "personagem", event.target.value)
-              }}
-            >
-              {personagens.map(p => (
-                <option key={p.nome} value={p.nome}>{p.nome}</option>
-              ))}
-            </select>
+                  {/* Input de Eidolons */}
+                  <input
+                    type="number"
+                    min={0}
+                    max={6}
+                    value={slot.eidolons}
+                    onChange={(event) => {
+                      atualizarSlot(time1, setTime1, index, "eidolons", Number(event.target.value))
+                    }}
+                  />
 
-            {/* Input de Eidolons */}
-            <input
-              type="number"
-              min={0}
-              max={6}
-              value={slot.eidolons}
-              onChange={(event) => {
-                atualizarSlot(time1, setTime1, index, "eidolons", Number(event.target.value))
-              }}
-            />
+                  {/* Dropdown do Cone */}
+                  <select
+                    value={slot.cone}
+                    onChange={(event) => {
+                      atualizarSlot(time1, setTime1, index, "cone", event.target.value)
+                    }}
+                  >
+                    {Object.keys(cones).map(nomeCone => (
+                      <option key={nomeCone} value={nomeCone}>{nomeCone}</option>
+                    ))}
+                  </select>
 
-            {/* Dropdown do Cone */}
-            <select
-              value={slot.cone}
-              onChange={(event) => {
-                atualizarSlot(time1, setTime1, index, "cone", event.target.value)
-              }}
-            >
-              {Object.keys(cones).map(nomeCone => (
-                <option key={nomeCone} value={nomeCone}>{nomeCone}</option>
-              ))}
-            </select>
-
-            {/* Input de Sobreposição */}
-            <input
-              type="number"
-              min={1}
-              max={5}
-              value={slot.sobreposicao}
-              onChange={(event) => {
-                atualizarSlot(time1, setTime1, index, "sobreposicao", Number(event.target.value))
-              }}
-            />
+                  {/* Input de Sobreposição */}
+                  <input
+                    type="number"
+                    min={1}
+                    max={5}
+                    value={slot.sobreposicao}
+                    onChange={(event) => {
+                      atualizarSlot(time1, setTime1, index, "sobreposicao", Number(event.target.value))
+                    }}
+                  />
+                </div>
+              );
+            })}
           </div>
-        ))}
-      </div>
-      <p>Custo: {custoT1}</p>
+        </div>
 
-      <h2>Time 2</h2>
-      <div className="time-container">
-        {time2.map((slot, index) => (
-          <div key={index} className="slot-container">
-            <label>Slot {index + 1}</label>
+        <div className="time-section">
+          <h2>Time 2</h2>
+          <p>Custo: {custoT2}</p>
+          <div className="time-container">
+          {time2.map((slot, index) => {
+              const dadosPersonagem = personagens.find(p => p.nome === slot.personagem) || { imagem: "ID" };
+              return(
+                <div key={index} className="slot-container">
+                  <img 
+                    src={dadosPersonagem && dadosPersonagem.imagem !== "ID" 
+                      ? `https://lh3.googleusercontent.com/d/${dadosPersonagem.imagem}` 
+                      : "https://placehold.co/150x150/2e303a/ffffff?text=?"
+                    } 
+                    alt={slot.personagem} 
+                    className="slot-avatar"
+                  />
+                  <label>Slot {index + 1}</label>
 
-            {/* Dropdown do Personagem */}
-            <select
-              value={slot.personagem}
-              onChange={(event) => {
-                atualizarSlot(time2, setTime2, index, "personagem", event.target.value)
-              }}
-            >
-              {personagens.map(p => (
-                <option key={p.nome} value={p.nome}>{p.nome}</option>
-              ))}
-            </select>
+                  {/* Dropdown do Personagem */}
+                  <select
+                    value={slot.personagem}
+                    onChange={(event) => {
+                      atualizarSlot(time2, setTime2, index, "personagem", event.target.value)
+                    }}
+                  >
+                    {personagens.map(p => (
+                      <option key={p.nome} value={p.nome}>{p.nome}</option>
+                    ))}
+                  </select>
 
-            {/* Input de Eidolons */}
-            <input
-              type="number"
-              min={0}
-              max={6}
-              value={slot.eidolons}
-              onChange={(event) => {
-                atualizarSlot(time2, setTime2, index, "eidolons", Number(event.target.value))
-              }}
-            />
+                  {/* Input de Eidolons */}
+                  <input
+                    type="number"
+                    min={0}
+                    max={6}
+                    value={slot.eidolons}
+                    onChange={(event) => {
+                      atualizarSlot(time2, setTime2, index, "eidolons", Number(event.target.value))
+                    }}
+                  />
 
-            {/* Dropdown do Cone */}
-            <select
-              value={slot.cone}
-              onChange={(event) => {
-                atualizarSlot(time2, setTime2, index, "cone", event.target.value)
-              }}
-            >
-              {Object.keys(cones).map(nomeCone => (
-                <option key={nomeCone} value={nomeCone}>{nomeCone}</option>
-              ))}
-            </select>
+                  {/* Dropdown do Cone */}
+                  <select
+                    value={slot.cone}
+                    onChange={(event) => {
+                      atualizarSlot(time2, setTime2, index, "cone", event.target.value)
+                    }}
+                  >
+                    {Object.keys(cones).map(nomeCone => (
+                      <option key={nomeCone} value={nomeCone}>{nomeCone}</option>
+                    ))}
+                  </select>
 
-            {/* Input de Sobreposição */}
-            <input
-              type="number"
-              min={1}
-              max={5}
-              value={slot.sobreposicao}
-              onChange={(event) => {
-                atualizarSlot(time2, setTime2, index, "sobreposicao", Number(event.target.value))
-              }}
-            />
+                  {/* Input de Sobreposição */}
+                  <input
+                    type="number"
+                    min={1}
+                    max={5}
+                    value={slot.sobreposicao}
+                    onChange={(event) => {
+                      atualizarSlot(time2, setTime2, index, "sobreposicao", Number(event.target.value))
+                    }}
+                  />
+                </div>
+              );
+            })}
           </div>
-        ))}
+        </div>
       </div>
-      <p>Custo: {custoT2}</p>
-
       {/* Input de custo adicional */}
       <div>
         <label>Custo Adicional: </label>
@@ -153,9 +179,10 @@ function App() {
           onChange={(event) => setCustoAdicional(Number(event.target.value))}
         />
       </div>
+      
       <p>O custo total é: {custoTotal}</p>
     </div>
-  )
+  );
 }
 
 export default App
