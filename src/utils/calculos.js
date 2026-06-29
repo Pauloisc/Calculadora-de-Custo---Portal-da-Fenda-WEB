@@ -13,8 +13,9 @@ export function calcularCustoCone(nomeCone, sobreposicao, nomePersonagem){
     if (!regrasCone) {return 0;}
     const personagemEncontrado = personagens.find(p => p.nome === nomePersonagem);
     if (personagemEncontrado && (personagemEncontrado.tier === "D" || personagemEncontrado.tier === "E" || personagemEncontrado.tier === "F")) {
-        if (nomeCone === "Cone T5"){
-            return 0.5 + regrasCone.adicional * (sobreposicao - 1);}}
+        if (nomePersonagem === "Trailblazer") {return (regrasCone.base + regrasCone.adicional * (sobreposicao - 1));}
+        if (nomeCone === "Cone T5"){return 0.5 + regrasCone.adicional * (sobreposicao - 1);}}
+        
     return (regrasCone.base + regrasCone.adicional * (sobreposicao - 1));
 }
 
