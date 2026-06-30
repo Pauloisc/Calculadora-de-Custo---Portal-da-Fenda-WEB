@@ -79,7 +79,7 @@ export const personagens = [
   { nome: "Silver Wolf", tier: "D", partner: "Nada", imagem: "1MbhoAlvBkX4uAy12zda6vxi-Nl3NiB3x" },
   { nome: "Silver Wolf 999", tier: "A", partner: "Nada", imagem: "1jPOOzuwXvnHGNGvVtcEE6fpJ5CWZe_J0" },
   { nome: "Sparkle", tier: "B", partner: "Nada", imagem: "1l47smxqNpQ8mU4LDHmmDNrynocNwJD9m" },
-  { nome: "Sparxie", tier: "A", partner: "Nada", imagem: "1vdx_yspU09BLLowe4vycQrdDSVTLVtao" },
+  { nome: "Sparxie", tier: "A", partner: "Yao Guang", imagem: "1vdx_yspU09BLLowe4vycQrdDSVTLVtao" },
   { nome: "Sunday", tier: "C", partner: "Nada", imagem: "1mhXuCGj2DqyzMpRYIoq5z8azBpPsaByz" },
   { nome: "Sushang", tier: "F", partner: "Nada", imagem: "1duREmJrwSX4vD79oEFYFWTi0Rh3j7abq" },
   { nome: "The Dahlia", tier: "A", partner: "Nada", imagem: "1xLcdjBUfXr_BPlY03kl1vIMSUXKloF2G" },
