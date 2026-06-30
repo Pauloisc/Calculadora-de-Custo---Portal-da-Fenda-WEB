@@ -21,6 +21,7 @@ export function calcularCustoCone(nomeCone, sobreposicao, nomePersonagem){
 
 export function calcularCustoTime(time){
     let custoTime = 0;
+    let temParceriaAtiva = false;
     for (const slot of time) {
         if (slot.personagem === "Nada" || !slot.personagem) {
             custoTime -= 1.5; 
@@ -31,8 +32,9 @@ export function calcularCustoTime(time){
         const dadosPersonagem = personagens.find(p => p.nome === slot.personagem);
         if (dadosPersonagem && dadosPersonagem.partner && dadosPersonagem.partner !== "Nada") {
             const parceiroPresente = time.some(s => s.personagem === dadosPersonagem.partner);
-            if (parceiroPresente) {custoTime += 1;}}
+            if (parceiroPresente) {temParceriaAtiva = true;}
     }
+    if (temParceriaAtiva) {custoTime += 1;}}
     return custoTime;
 }
 
