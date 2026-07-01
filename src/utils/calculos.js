@@ -15,7 +15,6 @@ export function calcularCustoCone(nomeCone, sobreposicao, nomePersonagem){
     if (personagemEncontrado && (personagemEncontrado.tier === "D" || personagemEncontrado.tier === "E" || personagemEncontrado.tier === "F")) {
         if (nomePersonagem === "Trailblazer") {return (regrasCone.base + regrasCone.adicional * (sobreposicao - 1));}
         if (nomeCone === "Cone T5"){return 0.5 + regrasCone.adicional * (sobreposicao - 1);}}
-        
     return (regrasCone.base + regrasCone.adicional * (sobreposicao - 1));
 }
 
@@ -33,8 +32,9 @@ export function calcularCustoTime(time){
         if (dadosPersonagem && dadosPersonagem.partner && dadosPersonagem.partner !== "Nada") {
             const parceiroPresente = time.some(s => s.personagem === dadosPersonagem.partner);
             if (parceiroPresente) {temParceriaAtiva = true;}
+        }
     }
-    if (temParceriaAtiva) {custoTime += 1;}}
+    if (temParceriaAtiva) {custoTime += 1;}
     return custoTime;
 }
 
