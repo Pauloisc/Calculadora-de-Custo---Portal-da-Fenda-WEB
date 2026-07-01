@@ -1,7 +1,7 @@
 import './App.css'
 import { useState } from 'react';
-import { personagens, TIER_RULES, cones } from './data/personagem';
-import { calcularCustoPersonagem, calcularCustoCone, calcularCustoTotal, calcularCustoTime } from './utils/calculos';
+import { personagens, cones } from './data/personagem';
+import { calcularCustoTime } from './utils/calculos';
 import { BuscaPersonagem } from './components/BuscaPersonagem';
 
 const timeInicial = [
@@ -14,7 +14,9 @@ const timeInicial = [
 function App() {
   const [time1, setTime1] = useState(timeInicial);
   const [time2, setTime2] = useState(timeInicial);
+  const [time3, setTime3] = useState(timeInicial);
   const [custoAdicional, setCustoAdicional] = useState(0);
+  const [qtdTimes, setQtdTimes] = useState(1);
 
   const atualizarSlot = (time, setTime, index, campo, valor) => {
     const novoTime = [...time];
@@ -25,14 +27,25 @@ function App() {
     setTime(novoTime);
   };
 
-  let custoTotal = calcularCustoTotal(time1, time2, custoAdicional)
+  let custoTotal = 0;
   let custoT1 = calcularCustoTime(time1)
   let custoT2 = calcularCustoTime(time2)
+  let custoT3 = calcularCustoTime(time3)
+
+  if (qtdTimes === 1) {
+    custoTotal = custoT1 + custoAdicional;
+  } else if (qtdTimes === 2) {
+    custoTotal = custoT1 + custoT2 + custoAdicional;
+  } else {
+    custoTotal = custoT1 + custoT2 + custoT3 + custoAdicional;
+  }
 
   return (
     <div className="app-container">
       <h1>Portal da Fenda - Calculadora de Custos</h1>
       <div className="times-wrapper">
+        
+        {/* Bloco do Time 1 */}
         <div className="time-section">
           <h2>Time 1</h2>
           <p>Custo: {custoT1}</p>
@@ -96,71 +109,152 @@ function App() {
             })}
           </div>
         </div>
+        
+        {/* Bloco do Time 2 */}
+        {qtdTimes >= 2 && (
+          <div className="time-section">
+            <h2>Time 2</h2>
+            <p>Custo: {custoT2}</p>
+            <div className="time-container">
+            {time2.map((slot, index) => {
+                const dadosPersonagem = personagens.find(p => p.nome === slot.personagem) || { imagem: "ID" };
+                return(
+                  <div key={index} className="slot-container">
+                    <img 
+                      src={dadosPersonagem && dadosPersonagem.imagem !== "ID" 
+                        ? `https://lh3.googleusercontent.com/d/${dadosPersonagem.imagem}` 
+                        : "https://placehold.co/150x150/2e303a/ffffff?text=?"
+                      } 
+                      alt={slot.personagem} 
+                      className="slot-avatar"
+                    />
+                    <label>Slot {index + 1}</label>
 
-        <div className="time-section">
-          <h2>Time 2</h2>
-          <p>Custo: {custoT2}</p>
-          <div className="time-container">
-          {time2.map((slot, index) => {
-              const dadosPersonagem = personagens.find(p => p.nome === slot.personagem) || { imagem: "ID" };
-              return(
-                <div key={index} className="slot-container">
-                  <img 
-                    src={dadosPersonagem && dadosPersonagem.imagem !== "ID" 
-                      ? `https://lh3.googleusercontent.com/d/${dadosPersonagem.imagem}` 
-                      : "https://placehold.co/150x150/2e303a/ffffff?text=?"
-                    } 
-                    alt={slot.personagem} 
-                    className="slot-avatar"
-                  />
-                  <label>Slot {index + 1}</label>
+                    <BuscaPersonagem
+                      valorSelecionado={slot.personagem}
+                      onSelecionar={(novoPersonagem) => {
+                        atualizarSlot(time2, setTime2, index, "personagem", novoPersonagem)
+                      }}
+                    />
 
-                  <BuscaPersonagem
-                    valorSelecionado={slot.personagem}
-                    onSelecionar={(novoPersonagem) => {
-                      atualizarSlot(time2, setTime2, index, "personagem", novoPersonagem)
-                    }}
-                  />
+                    {/* Input de Eidolons */}
+                    <input
+                      type="number"
+                      min={0}
+                      max={6}
+                      value={slot.eidolons}
+                      onChange={(event) => {
+                        atualizarSlot(time2, setTime2, index, "eidolons", Number(event.target.value))
+                      }}
+                    />
 
-                  {/* Input de Eidolons */}
-                  <input
-                    type="number"
-                    min={0}
-                    max={6}
-                    value={slot.eidolons}
-                    onChange={(event) => {
-                      atualizarSlot(time2, setTime2, index, "eidolons", Number(event.target.value))
-                    }}
-                  />
+                    {/* Dropdown do Cone */}
+                    <select
+                      value={slot.cone}
+                      onChange={(event) => {
+                        atualizarSlot(time2, setTime2, index, "cone", event.target.value)
+                      }}
+                    >
+                      {Object.keys(cones).map(nomeCone => (
+                        <option key={nomeCone} value={nomeCone}>{nomeCone}</option>
+                      ))}
+                    </select>
 
-                  {/* Dropdown do Cone */}
-                  <select
-                    value={slot.cone}
-                    onChange={(event) => {
-                      atualizarSlot(time2, setTime2, index, "cone", event.target.value)
-                    }}
-                  >
-                    {Object.keys(cones).map(nomeCone => (
-                      <option key={nomeCone} value={nomeCone}>{nomeCone}</option>
-                    ))}
-                  </select>
-
-                  {/* Input de Sobreposição */}
-                  <input
-                    type="number"
-                    min={1}
-                    max={5}
-                    value={slot.sobreposicao}
-                    onChange={(event) => {
-                      atualizarSlot(time2, setTime2, index, "sobreposicao", Number(event.target.value))
-                    }}
-                  />
-                </div>
-              );
-            })}
+                    {/* Input de Sobreposição */}
+                    <input
+                      type="number"
+                      min={1}
+                      max={5}
+                      value={slot.sobreposicao}
+                      onChange={(event) => {
+                        atualizarSlot(time2, setTime2, index, "sobreposicao", Number(event.target.value))
+                      }}
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* Bloco do Time 3 */}
+        {qtdTimes === 3 && (
+          <div className="time-section">
+            <h2>Time 3</h2>
+            <p>Custo: {custoT3}</p>
+            <div className="time-container">
+            {time3.map((slot, index) => {
+                const dadosPersonagem = personagens.find(p => p.nome === slot.personagem) || { imagem: "ID" };
+                return(
+                  <div key={index} className="slot-container">
+                    <img 
+                      src={dadosPersonagem && dadosPersonagem.imagem !== "ID" 
+                        ? `https://lh3.googleusercontent.com/d/${dadosPersonagem.imagem}` 
+                        : "https://placehold.co/150x150/2e303a/ffffff?text=?"
+                      } 
+                      alt={slot.personagem} 
+                      className="slot-avatar"
+                    />
+                    <label>Slot {index + 1}</label>
+
+                    <BuscaPersonagem
+                      valorSelecionado={slot.personagem}
+                      onSelecionar={(novoPersonagem) => {
+                        atualizarSlot(time3, setTime3, index, "personagem", novoPersonagem)
+                      }}
+                    />
+
+                    {/* Input de Eidolons */}
+                    <input
+                      type="number"
+                      min={0}
+                      max={6}
+                      value={slot.eidolons}
+                      onChange={(event) => {
+                        atualizarSlot(time3, setTime3, index, "eidolons", Number(event.target.value))
+                      }}
+                    />
+
+                    {/* Dropdown do Cone */}
+                    <select
+                      value={slot.cone}
+                      onChange={(event) => {
+                        atualizarSlot(time3, setTime3, index, "cone", event.target.value)
+                      }}
+                    >
+                      {Object.keys(cones).map(nomeCone => (
+                        <option key={nomeCone} value={nomeCone}>{nomeCone}</option>
+                      ))}
+                    </select>
+
+                    {/* Input de Sobreposição */}
+                    <input
+                      type="number"
+                      min={1}
+                      max={5}
+                      value={slot.sobreposicao}
+                      onChange={(event) => {
+                        atualizarSlot(time3, setTime3, index, "sobreposicao", Number(event.target.value))
+                      }}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* Input da quantidade de times */}
+      <div>
+        <label>Quantidade de times: </label>
+        <select value={qtdTimes} onChange={(event) => { setQtdTimes(Number(event.target.value)) }}>
+          <option value={1}>1 Time</option>
+          <option value={2}>2 Times</option>
+          <option value={3}>3 Times</option>
+        </select>
+      </div>
+
       {/* Input de custo adicional */}
       <div>
         <label>Custo Adicional: </label>

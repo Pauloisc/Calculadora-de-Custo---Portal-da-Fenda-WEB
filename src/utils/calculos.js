@@ -37,7 +37,3 @@ export function calcularCustoTime(time){
     if (temParceriaAtiva) {custoTime += 1;}
     return custoTime;
 }
-
-export function calcularCustoTotal(time1, time2, extra){
-    return calcularCustoTime(time1) + calcularCustoTime(time2) + extra;
-}
