@@ -75,7 +75,7 @@ function App() {
         {/* Bloco do Time 1 */}
         <div className="time-section">
           <h2>Time 1</h2>
-          <p>Custo: {custoT1}</p>
+          <p className="custo-time">Custo: {custoT1}</p>
           <div className="time-container">
             {time1.map((slot, index) => {
               const dadosPersonagem = personagens.find(p => p.nome === slot.personagem) || { imagem: "ID" };
@@ -84,7 +84,7 @@ function App() {
                   <img 
                     src={dadosPersonagem && dadosPersonagem.imagem !== "ID" 
                       ? `https://lh3.googleusercontent.com/d/${dadosPersonagem.imagem}` 
-                      : "https://placehold.co/150x150/2e303a/ffffff?text=?"
+                      : "https://placehold.co/150x150/transparent/ffffff.png?text=?"
                     } 
                     alt={slot.personagem} 
                     className="slot-avatar"
@@ -145,7 +145,7 @@ function App() {
         {qtdTimes >= 2 && (
           <div className="time-section">
             <h2>Time 2</h2>
-            <p>Custo: {custoT2}</p>
+            <p className="custo-time">Custo: {custoT2}</p>
             <div className="time-container">
             {time2.map((slot, index) => {
                 const dadosPersonagem = personagens.find(p => p.nome === slot.personagem) || { imagem: "ID" };
@@ -154,7 +154,7 @@ function App() {
                     <img 
                       src={dadosPersonagem && dadosPersonagem.imagem !== "ID" 
                         ? `https://lh3.googleusercontent.com/d/${dadosPersonagem.imagem}` 
-                        : "https://placehold.co/150x150/2e303a/ffffff?text=?"
+                        : "https://placehold.co/150x150/transparent/ffffff.png?text=?"
                       } 
                       alt={slot.personagem} 
                       className="slot-avatar"
@@ -216,7 +216,7 @@ function App() {
         {qtdTimes === 3 && (
           <div className="time-section">
             <h2>Time 3</h2>
-            <p>Custo: {custoT3}</p>
+            <p className="custo-time">Custo: {custoT1}</p>
             <div className="time-container">
             {time3.map((slot, index) => {
                 const dadosPersonagem = personagens.find(p => p.nome === slot.personagem) || { imagem: "ID" };
@@ -225,7 +225,7 @@ function App() {
                     <img 
                       src={dadosPersonagem && dadosPersonagem.imagem !== "ID" 
                         ? `https://lh3.googleusercontent.com/d/${dadosPersonagem.imagem}` 
-                        : "https://placehold.co/150x150/2e303a/ffffff?text=?"
+                        : "https://placehold.co/150x150/transparent/ffffff.png?text=?"
                       } 
                       alt={slot.personagem} 
                       className="slot-avatar"
@@ -286,8 +286,8 @@ function App() {
 
       {/* Input da quantidade de times */}
       <div>
-        <label>Quantidade de times: </label>
-        <select value={qtdTimes} onChange={(event) => { setQtdTimes(Number(event.target.value)) }}>
+        <label className="label-config">Quantidade de times: </label>
+        <select className="select-config" value={qtdTimes} onChange={(event) => { setQtdTimes(Number(event.target.value)) }}>
           <option value={1}>1 Time</option>
           <option value={2}>2 Times</option>
           <option value={3}>3 Times</option>
@@ -296,15 +296,16 @@ function App() {
 
       {/* Input de custo adicional */}
       <div>
-        <label>Custo Adicional: </label>
+        <label className="label-config">Custo adicional: </label>
         <input
+          className="input-config"
           type="number"
           value={custoAdicional}
           onChange={(event) => setCustoAdicional(Number(event.target.value))}
         />
       </div>
       
-      <p>O custo total é: {custoTotal}</p>
+      <p className="custo-total">O custo total é: {custoTotal}</p>
     </div>
   );
 }

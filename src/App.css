@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;600&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -63,17 +65,17 @@
   max-width: 500px;
 }
 
-/* Bloco Cinza (Onde ficam os Slots) */
 .time-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  background-color: #2e303a;
   padding: 16px;
   margin-top: 12px; 
   margin-bottom: 24px;
   width: 100%;
-  border-radius: 6px; 
+  border-radius: 8px; 
+  background-color: #28134b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
 }
 
 /* Botoes de exportar e limpar time */
@@ -94,17 +96,78 @@
   width: 100%;        
 }
 
+/* Inputs e Selects dentro dos Slots */
+.slot-container select,
+.slot-container input {
+  width: 100%;
+}
+
 /* Estilo da Imagem / Avatar */
 .slot-avatar {
   width: 120px;          
   height: 120px;         
   object-fit: cover;     
   border-radius: 4px;    
-  border: 2px solid #5f6368; 
+  border: 2px solid #ffffff; 
 }
 
-/* Inputs e Selects dentro dos Slots */
-.slot-container select,
-.slot-container input {
-  width: 100%;
+/* Estilo de fonte dos labs dos slots*/
+.slot-container label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #e0d9f5;
+}
+
+/* Configuração para labels externas */
+.label-config {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+}
+
+/* Configuracao do label de custo total */
+.custo-total {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* Configuracao do label de custo do time */
+.custo-time {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Configuracao dos textos dos slots */
+.slot-container input,
+.slot-container select {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+}
+
+/* Configuração dos textos do time 1, 2 e 3*/
+h1, h2 {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Configuração dos textos dos botões "Exportar" e "Limpar" */
+.time-buttons-container button {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Configuração dos textos do botão de selecionar a quantidade de times */
+.select-config {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+}
+
+/* Configuração do texto de input para custo adicional */
+.input-config {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
 }

@@ -14,7 +14,7 @@ export function BuscaPersonagem({ valorSelecionado, onSelecionar }) {
         type="text"
         className="busca-input"
         value={isOpen ? searchTerm : valorSelecionado}
-        placeholder="Buscar personagem..."
+        placeholder="Digite o nome"
         onChange={(event) => setSearchTerm(event.target.value)}
         onFocus={() => {
           setIsOpen(true);
@@ -27,8 +27,8 @@ export function BuscaPersonagem({ valorSelecionado, onSelecionar }) {
           top: '100%',
           left: 0,
           right: 0,
-          backgroundColor: '#2e303a',
-          border: '1px solid #5f6368',
+          backgroundColor: '#351b5f',
+          border: '1px solid #221439',
           borderRadius: '4px',
           maxHeight: '200px',
           overflowY: 'auto',
@@ -55,7 +55,7 @@ export function BuscaPersonagem({ valorSelecionado, onSelecionar }) {
               <img
                 src={p.imagem !== "ID" 
                   ? `https://lh3.googleusercontent.com/d/${p.imagem}` 
-                  : "https://placehold.co/30x30/2e303a/ffffff?text=?"
+                  : "https://placehold.co/150x150/transparent/ffffff.png?text=?"
                 }
                 alt={p.nome}
                 style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover' }}
