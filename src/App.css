@@ -5,13 +5,22 @@
 
 /* Container Principal do App */
 .app-container {
-  background-color: #1a1a2e;
+  background: linear-gradient(-45deg, #0D0814, #1A0B2E, #31145A, #4A157D);
+  background-size: 400% 400%;
   color: #ffffff;   
   min-height: 100vh;    
   padding: 6px 24px 24px 24px;    
   display: flex;
   flex-direction: column;
   align-items: center; 
+  animation: gradiente-animado 25s ease infinite;
+}
+
+/* Para o fundo animado */
+@keyframes gradiente-animado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Centraliza exclusivamente o título principal do site */
