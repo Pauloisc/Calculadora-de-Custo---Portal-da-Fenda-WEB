@@ -18,6 +18,33 @@ function App() {
   const [custoAdicional, setCustoAdicional] = useState(0);
   const [qtdTimes, setQtdTimes] = useState(1);
 
+  const limparTime1 = () => {setTime1(timeInicial);};
+  const limparTime2 = () => {setTime2(timeInicial);};
+  const limparTime3 = () => {setTime3(timeInicial);};
+
+  const exportarTime = (time, custoTime) => {
+    const slotsAtivos = time.filter(slot => slot.personagem !== "Nada");
+    const textosSlots = slotsAtivos.map(slot => {
+      if (slot.cone === "Nada") {
+        return `${slot.personagem} E${slot.eidolons} Sem cone`;
+      } else {
+        return `${slot.personagem} E${slot.eidolons} ${slot.cone} S${slot.sobreposicao}`;
+      }
+    });
+    let textoFinal = "";
+    if (textosSlots.length > 0) {
+      if (textosSlots.length > 1) {
+        const ultimo = textosSlots.pop();
+        textoFinal = textosSlots.join(", ") + " e " + ultimo;
+      } else {
+        textoFinal = textosSlots[0];
+      }
+    }
+    textoFinal += ` = Custo ${custoTime}`;
+    navigator.clipboard.writeText(textoFinal);
+    alert("Time copiado para a área de transferência!");
+  };
+
   const atualizarSlot = (time, setTime, index, campo, valor) => {
     const novoTime = [...time];
     novoTime[index] = {
@@ -107,6 +134,10 @@ function App() {
                 </div>
               );
             })}
+            <div className="time-buttons-container">
+              <button onClick={limparTime1}>Limpar</button>
+              <button onClick={() => exportarTime(time1, custoT1)}>Exportar</button>
+            </div>
           </div>
         </div>
         
@@ -173,7 +204,11 @@ function App() {
                   </div>
                 );
               })}
-            </div>
+              <div className="time-buttons-container">
+                <button onClick={limparTime2}>Limpar</button>
+                <button onClick={() => exportarTime(time2, custoT2)}>Exportar</button>
+              </div>   
+            </div>  
           </div>
         )}
 
@@ -240,6 +275,10 @@ function App() {
                   </div>
                 );
               })}
+              <div className="time-buttons-container">
+                <button onClick={limparTime3}>Limpar</button>
+                <button onClick={() => exportarTime(time3, custoT3)}>Exportar</button>
+              </div>
             </div>
           </div>
         )}
