@@ -2,6 +2,7 @@ import './App.css'
 import { useState } from 'react';
 import { personagens, TIER_RULES, cones } from './data/personagem';
 import { calcularCustoPersonagem, calcularCustoCone, calcularCustoTotal, calcularCustoTime } from './utils/calculos';
+import { BuscaPersonagem } from './components/BuscaPersonagem';
 
 const timeInicial = [
   { personagem: "Nada", eidolons: 0, cone: "Nada", sobreposicao: 1 },
@@ -50,17 +51,12 @@ function App() {
                   />
                   <label>Slot {index + 1}</label>
 
-                  {/* Dropdown do Personagem */}
-                  <select
-                    value={slot.personagem}
-                    onChange={(event) => {
-                      atualizarSlot(time1, setTime1, index, "personagem", event.target.value)
+                  <BuscaPersonagem
+                    valorSelecionado={slot.personagem}
+                    onSelecionar={(novoPersonagem) => {
+                      atualizarSlot(time1, setTime1, index, "personagem", novoPersonagem)
                     }}
-                  >
-                    {personagens.map(p => (
-                      <option key={p.nome} value={p.nome}>{p.nome}</option>
-                    ))}
-                  </select>
+                  />
 
                   {/* Input de Eidolons */}
                   <input
@@ -119,17 +115,12 @@ function App() {
                   />
                   <label>Slot {index + 1}</label>
 
-                  {/* Dropdown do Personagem */}
-                  <select
-                    value={slot.personagem}
-                    onChange={(event) => {
-                      atualizarSlot(time2, setTime2, index, "personagem", event.target.value)
+                  <BuscaPersonagem
+                    valorSelecionado={slot.personagem}
+                    onSelecionar={(novoPersonagem) => {
+                      atualizarSlot(time2, setTime2, index, "personagem", novoPersonagem)
                     }}
-                  >
-                    {personagens.map(p => (
-                      <option key={p.nome} value={p.nome}>{p.nome}</option>
-                    ))}
-                  </select>
+                  />
 
                   {/* Input de Eidolons */}
                   <input
