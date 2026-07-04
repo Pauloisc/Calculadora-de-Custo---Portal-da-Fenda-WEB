@@ -69,7 +69,11 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Portal da Fenda - Calculadora de Custos</h1>
+      <img 
+        src='https://lh3.googleusercontent.com/d/11IJMUUMnKEuXPd2b7f9H0KRqKxHmPjRk'
+        alt='Logo do evento Portal da Fenda'
+        className= 'slot-logo'
+      />
       <div className="times-wrapper">
         
         {/* Bloco do Time 1 */}

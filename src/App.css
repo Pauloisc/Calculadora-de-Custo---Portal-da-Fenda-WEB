@@ -102,6 +102,15 @@
   width: 100%;
 }
 
+/* Estilo da Imagem da logo */
+.slot-logo {
+  width: 200px;          
+  height: 200px;         
+  object-fit: cover;
+  display: block;
+  margin: 20px auto 5px auto
+}
+
 /* Estilo da Imagem / Avatar */
 .slot-avatar {
   width: 120px;          
