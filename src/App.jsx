@@ -216,7 +216,7 @@ function App() {
         {qtdTimes === 3 && (
           <div className="time-section">
             <h2>Time 3</h2>
-            <p className="custo-time">Custo: {custoT1}</p>
+            <p className="custo-time">Custo: {custoT3}</p>
             <div className="time-container">
             {time3.map((slot, index) => {
                 const dadosPersonagem = personagens.find(p => p.nome === slot.personagem) || { imagem: "ID" };
