@@ -103,3 +103,10 @@ export const cones = {
     "Cone T5 da Loja da Herta": { base: 0, adicional: 0 },
     "Nada": { base: -1.0, adicional: 0 }
 }
+
+export const EIDOLON_SPIKE = {
+  E1: [],
+  E2: ["Evernight","Evanescia"],
+  E4: [],
+  E6: [],
+}

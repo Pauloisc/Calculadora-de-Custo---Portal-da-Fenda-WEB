@@ -46,6 +46,17 @@ function App() {
   };
 
   const atualizarSlot = (time, setTime, index, campo, valor) => {
+    if(campo == "personagem" && valor == "Nada"){
+      const novoTime = [...time];
+      novoTime[index] = {
+        personagem: "Nada",
+        eidolons: 0,
+        cone: "Nada",
+        sobreposicao: 1
+      }; 
+      setTime(novoTime);
+      return;
+    }
     const novoTime = [...time];
     novoTime[index] = {
       ...novoTime[index],
