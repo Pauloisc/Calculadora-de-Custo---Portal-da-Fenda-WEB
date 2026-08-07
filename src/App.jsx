@@ -24,6 +24,7 @@ function App() {
 
   const exportarTime = (time, custoTime) => {
     const slotsAtivos = time.filter(slot => slot.personagem !== "Nada");
+    
     const textosSlots = slotsAtivos.map(slot => {
       if (slot.cone === "Nada") {
         return `${slot.personagem} E${slot.eidolons} Sem cone`;
@@ -31,16 +32,8 @@ function App() {
         return `${slot.personagem} E${slot.eidolons} ${slot.cone} S${slot.sobreposicao}`;
       }
     });
-    let textoFinal = "";
-    if (textosSlots.length > 0) {
-      if (textosSlots.length > 1) {
-        const ultimo = textosSlots.pop();
-        textoFinal = textosSlots.join(", ") + " e " + ultimo;
-      } else {
-        textoFinal = textosSlots[0];
-      }
-    }
-    textoFinal += ` = Custo ${custoTime}`;
+    let textoFinal = textosSlots.join("\n");
+    textoFinal += `\nCusto: ${custoTime}`;
     navigator.clipboard.writeText(textoFinal);
     alert("Time copiado para a área de transferência!");
   };
