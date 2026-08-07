@@ -11,7 +11,7 @@ export function calcularCustoPersonagem(nome, eidolons){
         const spikeEncontrado = EIDOLON_SPIKE[chave]?.find(item => item.nome === personagemEncontrado.nome);
         if(spikeEncontrado){eidolonSpike += spikeEncontrado.custo}
     }
-    if (personagemEncontrado.nome == "Trailblazer") {return 0}
+    if (personagemEncontrado.nome == "Trailblazer" || personagemEncontrado.nome == "Himeko" || personagemEncontrado.nome == "Bronya") {return 0}
     else {return regrasPersonagem.base + regrasPersonagem.eidolon * eidolons + eidolonSpike}
 }
 
