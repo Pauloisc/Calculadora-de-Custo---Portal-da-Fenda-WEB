@@ -3,16 +3,26 @@ import { personagens, TIER_RULES, cones, EIDOLON_SPIKE } from '../data/personage
 export function calcularCustoPersonagem(nome, eidolons){
     const personagemEncontrado = personagens.find(p => p.nome === nome);
     let eidolonSpike = 0
+    let custoEidolons = 0
     if (!personagemEncontrado) {return 0;}
     const regrasPersonagem = TIER_RULES[personagemEncontrado.tier];
-    let temSpike = false;
+
     for (let nivel = 1; nivel <= eidolons; nivel++) {
         const chave = `E${nivel}`;
         const spikeEncontrado = EIDOLON_SPIKE[chave]?.find(item => item.nome === personagemEncontrado.nome);
-        if(spikeEncontrado){eidolonSpike += spikeEncontrado.custo}
+        if(spikeEncontrado){ eidolonSpike += spikeEncontrado.custo; }
+        const eTierAlto = personagemEncontrado.tier === "A" || personagemEncontrado.tier === "S" || personagemEncontrado.tier === "Z";
+        if ((nivel === 3 || nivel === 5) && eTierAlto) {
+            custoEidolons += 0.5;
+        } else {
+            custoEidolons += regrasPersonagem.eidolon;
+        }
     }
-    if (personagemEncontrado.nome == "Trailblazer" || personagemEncontrado.nome == "Himeko" || personagemEncontrado.nome == "Bronya") {return 0}
-    else {return regrasPersonagem.base + regrasPersonagem.eidolon * eidolons + eidolonSpike}
+    if (personagemEncontrado.nome === "Trailblazer" || personagemEncontrado.nome === "Himeko" || personagemEncontrado.nome === "Bronya") {
+        return 0;
+    }
+
+    return regrasPersonagem.base + custoEidolons + eidolonSpike;
 }
 
 export function calcularCustoCone(nomeCone, sobreposicao, nomePersonagem){
