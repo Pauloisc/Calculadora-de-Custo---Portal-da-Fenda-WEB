@@ -5,6 +5,18 @@
   box-sizing: border-box;
 }
 
+/* Keyframe de animação */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Keyframe de animação */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Container Principal do App */
 .app-container {
   position: relative;
@@ -26,18 +38,72 @@
   100% { background-position: 0% 50%; }
 }
 
+/* Container para botões inferiores (Tier List, etc.) */
+.bottom-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 /* Botão para acessar tier lists */
 .btn-tierlist {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
   background-color: #28134B;
   color: #ffffff;
-  padding: 8px 16px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   cursor: pointer;
   font-family: 'Rajdhani', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-tierlist:hover {
+  background-color: #3b1d6e;
+  transform: translateY(-2px);
+}
+
+/* Tela trasparente que aparecerá ao abrir a tier list */
+.overlay-tier-list {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Tela que aparecerá a imagem da tier listdentro */
+.tela-tier-list {
+  max-height: 90vh;
+  max-width: 90vw;
+  overflow-y: auto;
+}
+
+/* Tamanho da imagem da tier list*/
+.img-tier-list {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Botão para fechar a tier list */
+.btn-fechar-tierlist {
+  position: fixed; 
+  top: 20px; 
+  right: 20px;
+  cursor: pointer;
+  background-color: #28134B;
+  color: #ffffff;
+  z-index: 10000;
 }
 
 /* Centraliza exclusivamente o título principal do site */

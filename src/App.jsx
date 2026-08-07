@@ -316,9 +316,22 @@ function App() {
       
       <p className="custo-total">O custo total é: {custoTotal}</p>
 
-      <button className="btn-tierlist" onClick={() => setMostrarTierList(true)}>
-        Tier List
-      </button>
+      <div className="bottom-buttons-container">
+        <button className="btn-tierlist" onClick={() => setMostrarTierList(true)}>Tier List</button>
+      </div>
+
+      {mostrarTierList &&(
+        <div className="overlay-tier-list">
+          <div className="tela-tier-list">
+            <button className="btn-fechar-tierlist" onClick={() => setMostrarTierList(false)}>✕</button>
+            <img 
+              src="https://lh3.googleusercontent.com/d/1GeEnm96H__AKm8YydyZwgOnh5xJkVXa0"
+              alt='Tier list do Portal da Fenda'
+              className= 'img-tier-list'
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
