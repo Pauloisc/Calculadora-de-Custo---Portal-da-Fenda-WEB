@@ -27,14 +27,15 @@ Permite montar dois times com até 4 personagens cada, configurando eidolons, co
 
 | Tier | Base | Por Eidolon |
 |------|------|-------------|
-| Error | 2 | +1.5 |
-| Pilares do Meta | 1 | +1.5 |
-| Brilhantes | 0.5 | +1 |
-| Coringas | 0 | +0.5 |
-| Neutros | 0 | 0 |
-| Quebra Galho | -0.5 | 0 |
-| Fundo do Poço | -1 | 0 |
-| Slot vazio | -1.5 | — |
+| Z | 3 | +2 |
+| S | 2 | +1.5 |
+| A | 1 | +1.5 |
+| B | 0.5 | +1 |
+| C | 0 | +0.5 |
+| D | 0 | 0 |
+| E | -0.5 | 0 |
+| F | -1 | 0 |
+| Slot vazio | -2 | — |
 
 ### Cones de Luz
 
@@ -43,12 +44,21 @@ Permite montar dois times com até 4 personagens cada, configurando eidolons, co
 | Cone T5 | +1.0 | +0.25 |
 | Cone T5 da Loja da Herta | 0 | 0 |
 | Cone T4 | 0 | 0 |
-| Cone T3 | -0.5 | 0 |
-| Sem cone (Nada) | -1.0 | 0 |
+| Cone T3 | -0.25 | 0 |
+| Sem cone (Nada) | -0.5 | 0 |
 
 > Personagens em slots vazios não têm custo de cone aplicado.
+> Cones T5 para personagens do tier B para baixo custam +0.5
 
----
+## Regras adicionais
+
+### Parceiros de Equipe
+
+> Quando certas duplas de personagens estão juntas num mesmo time e apresentam um impacto considerável no desempenho aumentam o custo da composição em 1.
+
+### Eidolon de Impacto
+
+> Certos personagens, em Eidolons específicas, por possuírem um aumento de poder considerável, possuem o seu custo aumentado em 1 quando utilizadas na composição.
 
 ## 🛠️ Tecnologias
 
