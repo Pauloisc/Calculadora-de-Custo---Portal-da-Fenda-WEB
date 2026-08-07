@@ -7,6 +7,7 @@
 
 /* Container Principal do App */
 .app-container {
+  position: relative;
   background: linear-gradient(-45deg, #0D0814, #1A0B2E, #31145A, #4A157D);
   background-size: 400% 400%;
   color: #ffffff;   
@@ -23,6 +24,20 @@
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* Botão para acessar tier lists */
+.btn-tierlist {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background-color: #28134B;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
 }
 
 /* Centraliza exclusivamente o título principal do site */

@@ -28,7 +28,7 @@ export const personagens = [
   { nome: "Bronya", tier: "D", partner: "Nada", imagem: "1EXECJEs3v6-tk5gbbwPvwq-BT5TsWou2" },
   { nome: "Castorice", tier: "C", partner: "Nada", imagem: "1MJnZpAr9-l-axaRGJ-d0lMXogcvVnd0c" },
   { nome: "Cerydra", tier: "A", partner: "Nada", imagem: "1D4pXAVQJCt6GzDvGSs3wmwBqHZPINLrM" },
-  { nome: "Cipher", tier: "B", partner: "Nada", imagem: "15oUZXfmwnypsTf_E1JYXF6g4QnY1WxIF" },
+  { nome: "Cipher", tier: "C", partner: "Nada", imagem: "15oUZXfmwnypsTf_E1JYXF6g4QnY1WxIF" },
   { nome: "Clara", tier: "E", partner: "Nada", imagem: "1UWplAhXsxnsCIqEyuHMuK6BOXZXDzt1u" },
   { nome: "Cyrene", tier: "A", partner: "Nada", imagem: "12wfqlNDD6b8bSSYmabuR8iJdkF9_S0Dg" },
   { nome: "Dan Heng", tier: "F", partner: "Nada", imagem: "1UWGRpx0aSz-uCUGCl8kUXxnePLAhEXty" },

@@ -17,6 +17,7 @@ function App() {
   const [time3, setTime3] = useState(timeInicial);
   const [custoAdicional, setCustoAdicional] = useState(0);
   const [qtdTimes, setQtdTimes] = useState(1);
+  const [mostrarTierList, setMostrarTierList] = useState(false);
 
   const limparTime1 = () => {setTime1(timeInicial);};
   const limparTime2 = () => {setTime2(timeInicial);};
@@ -314,6 +315,10 @@ function App() {
       </div>
       
       <p className="custo-total">O custo total é: {custoTotal}</p>
+
+      <button className="btn-tierlist" onClick={() => setMostrarTierList(true)}>
+        Tier List
+      </button>
     </div>
   );
 }
