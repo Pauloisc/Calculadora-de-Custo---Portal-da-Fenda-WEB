@@ -4,17 +4,14 @@ export const TIER_RULES = {
   A: { base: 1, eidolon: 1.5 },
   B: { base: 0.5, eidolon: 1 },
   C: { base: 0, eidolon: 0.5 },
-  D: { base: 0, eidolon: 0 },
+  D: { base: 0, eidolon: 0.25 },
   E: { base: -0.5, eidolon: 0 },
   F: { base: -1, eidolon: 0 },
-  Nada: { base: -1.5, eidolon: 0}
+  Nada: { base: -2, eidolon: 0}
 };
 
 export const personagens = [
   { nome: "Nada", tier: "Nada", partner: "Nada", imagem: "ID" },
-  { nome: "Himeko Nova", tier: "Z", partner: "Sunday", imagem: "ID" },
-  { nome: "Rin Tohsaka", tier: "B", partner: "Nada", imagem: "ID" },
-  { nome: "Gilgamesh", tier: "S", partner: "Nada", imagem: "ID" },
   { nome: "Acheron", tier: "C", partner: "Nada", imagem: "1ItHFHilnE-76GeigTPgvJRbx_4l4hQB5" },
   { nome: "Aglaea", tier: "D", partner: "Nada", imagem: "1P7l1lL8SNsfwyC_Vrib2PipHY4Zc1ACl" },
   { nome: "Anaxa", tier: "C", partner: "Nada", imagem: "1AoOI7PsvwezZsFPm8l6eUoJu-qBCRYHZ" },
@@ -38,7 +35,7 @@ export const personagens = [
   { nome: "DHIL", tier: "E", partner: "Nada", imagem: "1hq9VL_19FNRJRK1JdVV6LIXydcTTrXuT" },
   { nome: "DHPT", tier: "B", partner: "Nada", imagem: "11JDjC1TiVNAjsKq9ig_XbmQKgFX0M1xG" },
   { nome: "Dr Ratio", tier: "E", partner: "Nada", imagem: "1EgyrPhHVhJIYWvgOAfLtST1cRfmyFE0j" },
-  { nome: "Evanescia", tier: "A", partner: "Yao Guang", imagem: "1TbMcCe1p_gtc4l2qAzStRvlUYP9gj1qx" },
+  { nome: "Evanescia", tier: "S", partner: "Yao Guang", imagem: "1TbMcCe1p_gtc4l2qAzStRvlUYP9gj1qx" },
   { nome: "Evernight", tier: "B", partner: "Trailblazer", imagem: "1r7BL28LnLjNpL84Pl1HJcrEq_dikkwsh" },
   { nome: "Feixiao", tier: "D", partner: "Nada", imagem: "1e762dKDfgz5AuZ1sgpwFoSN3uZzeE36I" },
   { nome: "Firefly", tier: "B", partner: "Nada", imagem: "1ugERUOCLQuAlLgNpYK_DOX6FMdYRFSIL" },
@@ -46,10 +43,12 @@ export const personagens = [
   { nome: "Fugue", tier: "B", partner: "Nada", imagem: "1HrI7gJmIp6EV5TK0ksr225j-YiNQUq0O" },
   { nome: "Gallagher", tier: "E", partner: "Nada", imagem: "1G0Gi0856vMELpJQX9Us9rL9M7oXCT5lI" },
   { nome: "Gepard", tier: "E", partner: "Nada", imagem: "1-0b2uGlnZ-blWZylc530OwA7bmXPEHsK" },
+  { nome: "Gilgamesh", tier: "S", partner: "Nada", imagem: "16DF0B7_SdjXASUwq7GzPQemSFFNOlEvg" },
   { nome: "Guinaifen", tier: "F", partner: "Nada", imagem: "19dcVrmMTTeEmwcyn9rRZ2tfUlB_lG52p" },
   { nome: "Hanya", tier: "E", partner: "Nada", imagem: "1kHJKB2P1XO7_XAKJap-zCT1MrswcbL8F" },
   { nome: "Herta", tier: "F", partner: "Nada", imagem: "1sIA-W9MHvBZD8YqEwqUK51fGwrgAzTaX" },
   { nome: "Himeko", tier: "D", partner: "Nada", imagem: "11K-Xa0ZJE_B8yqCTfNJNA6WM5NkVjPEP" },
+  { nome: "Himeko Nova", tier: "Z", partner: "Sunday", imagem: "1uI72dMpPvhO3Qea8W0elGNsG45XI6YUs" },
   { nome: "Hook", tier: "F", partner: "Nada", imagem: "1kjGq7j1LYeBc8zXjtYDqPEtyBow92ct3" },
   { nome: "Huohuo", tier: "B", partner: "Nada", imagem: "1MPqDb4sA8zg4estASHsMiEQK8v2bPXMW" },
   { nome: "Hyacine", tier: "C", partner: "Nada", imagem: "1ANAyq7OEl_XO0Us-MBNZaKZ15PjVl0Ta" },
@@ -74,6 +73,7 @@ export const personagens = [
   { nome: "Phainon", tier: "B", partner: "Nada", imagem: "1bzjyn0mLSJNCx6ASIG443SCSLnAz0TXG" },
   { nome: "Qingque", tier: "F", partner: "Nada", imagem: "1AtAL2h8LU0D3HVfZqsOwsR7nrH2LPf2t" },
   { nome: "Rappa", tier: "D", partner: "Nada", imagem: "1jiJ3iunn9K856g2VtO0aHUYgcbQZJf3E" },
+  { nome: "Rin Tohsaka", tier: "B", partner: "Nada", imagem: "1ykW1ugZYtRxXlONwdDLI2qN4POcGMoKf" },
   { nome: "Robin", tier: "B", partner: "Nada", imagem: "1ZCCaXwoR1TOGZJDmEoyVSfCqanYlVb4v" },
   { nome: "Ruan Mei", tier: "C", partner: "Nada", imagem: "1N7nUIr0F7W7cKqtK-qWmDroliW93QJ2l" },
   { nome: "Saber", tier: "C", partner: "Nada", imagem: "1siuj2efBCBuX49R4XbRDkw7HyEL_KbvE" },
@@ -97,15 +97,15 @@ export const personagens = [
   { nome: "Yanqing", tier: "F", partner: "Nada", imagem: "1DmpCxfbmbraOLcPH2HNIu-H8GSh51YLZ" },
   { nome: "Yao Guang", tier: "A", partner: "Nada", imagem: "1RTg2q2EbxF_VRf5aS99Az73YsAbfcfu8" },
   { nome: "Yukong", tier: "F", partner: "Nada", imagem: "1tADgyp1vd8tgTac7SeIXfdm7cOmIe6MO" },
-  { nome: "Yunli", tier: "D", partner: "Nada", imagem: "1w4R9mhpdmcGg_v23nq_3WB8RTkMEh1Aa" }
+  { nome: "Yunli", tier: "D", partner: "Nada", imagem: "1w4R9mhpdmcGg_v23nq_3WB8RTkMEh1Aa" },
 ];
 
 export const cones = {
     "Cone T5": { base: 1.0, adicional: 0.25 },
     "Cone T4": { base: 0, adicional: 0 },
-    "Cone T3": { base: -0.5, adicional: 0 },
+    "Cone T3": { base: -0.25, adicional: 0 },
     "Cone T5 da Loja da Herta": { base: 0, adicional: 0 },
-    "Nada": { base: -1.0, adicional: 0 }
+    "Nada": { base: -0.5, adicional: 0 }
 }
 
 export const EIDOLON_SPIKE = {

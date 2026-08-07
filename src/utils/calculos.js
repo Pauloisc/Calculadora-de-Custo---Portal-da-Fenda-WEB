@@ -15,7 +15,8 @@ export function calcularCustoPersonagem(nome, eidolons){
         return regrasPersonagem.base + regrasPersonagem.eidolon * eidolons + 1;
     }
     else{
-        return regrasPersonagem.base + regrasPersonagem.eidolon * eidolons;
+        if (personagemEncontrado.nome == "Trailblazer") {return 0}
+        else {return regrasPersonagem.base + regrasPersonagem.eidolon * eidolons}
     }
 }
 
@@ -24,8 +25,7 @@ export function calcularCustoCone(nomeCone, sobreposicao, nomePersonagem){
     const regrasCone = cones[nomeCone];
     if (!regrasCone) {return 0;}
     const personagemEncontrado = personagens.find(p => p.nome === nomePersonagem);
-    if (personagemEncontrado && (personagemEncontrado.tier === "D" || personagemEncontrado.tier === "E" || personagemEncontrado.tier === "F")) {
-        if (nomePersonagem === "Trailblazer") {return (regrasCone.base + regrasCone.adicional * (sobreposicao - 1));}
+    if (personagemEncontrado && (personagemEncontrado.tier === "B" || personagemEncontrado.tier === "C" || personagemEncontrado.tier === "D" || personagemEncontrado.tier === "E" || personagemEncontrado.tier === "F")) {
         if (nomeCone === "Cone T5"){return 0.5 + regrasCone.adicional * (sobreposicao - 1);}}
     return (regrasCone.base + regrasCone.adicional * (sobreposicao - 1));
 }
@@ -35,7 +35,7 @@ export function calcularCustoTime(time){
     let temParceriaAtiva = false;
     for (const slot of time) {
         if (slot.personagem === "Nada" || !slot.personagem) {
-            custoTime -= 1.5; 
+            custoTime += TIER_RULES["Nada"].base;
             continue;
         }
         custoTime += calcularCustoPersonagem(slot.personagem, slot.eidolons);
