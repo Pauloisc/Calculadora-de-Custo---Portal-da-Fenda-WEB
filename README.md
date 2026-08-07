@@ -88,8 +88,10 @@ Acesse em `http://localhost:5173`
 src/
 ├── App.jsx              # Componente principal com os dois times
 ├── App.css              # Estilos dos componentes
+├── components/
+│   └── BuscaPersonagem.js   # Responsável pela busca de personagens
 ├── data/
-│   └── personagem.js   # Lista de personagens, cones e regras de tier
+│   └── personagem.js   # Lista de personagens, cones, regras de tier e regras adicionais
 └── utils/
     └── calculos.js     # Lógica de cálculo de custo
 ```
