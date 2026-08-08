@@ -108,4 +108,4 @@ src/
 
 ## 👤 Autor
 
-Desenvolvido por **Paulo Ítalo** como ferramenta de apoio para a comunidade brasileira de Honkai: Star Rail.
+Desenvolvido por **Paulo Ítalo** como ferramenta de apoio para a comunidade do Discord do youtuber [Mimzy](https://www.youtube.com/@mimzy_official).
