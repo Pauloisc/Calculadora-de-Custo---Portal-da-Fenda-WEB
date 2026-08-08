@@ -23,7 +23,7 @@ function App() {
   const [time1, setTime1] = useState(timeInicial);
   const [time2, setTime2] = useState(timeInicial);
   const [time3, setTime3] = useState(timeInicial);
-  const [custoAdicional, setCustoAdicional] = useState(0);
+  const [custoAdicional, setCustoAdicional] = useState("0");
   const [qtdTimes, setQtdTimes] = useState(1);
   const [mostrarTierList, setMostrarTierList] = useState(false);
   const [mostrarParceirosEquipe, setMostrarParceirosEquipe] = useState(false);
@@ -75,12 +75,13 @@ function App() {
   let custoT2 = calcularCustoTime(time2)
   let custoT3 = calcularCustoTime(time3)
 
+  const custoAdicionalNumerico = custoAdicional === "" || custoAdicional === "-" ? 0 : Number(custoAdicional.replace(",", ".")) || 0;
   if (qtdTimes === 1) {
-    custoTotal = custoT1 + custoAdicional;
+    custoTotal = custoT1 + custoAdicionalNumerico;
   } else if (qtdTimes === 2) {
-    custoTotal = custoT1 + custoT2 + custoAdicional;
+    custoTotal = custoT1 + custoT2 + custoAdicionalNumerico;
   } else {
-    custoTotal = custoT1 + custoT2 + custoT3 + custoAdicional;
+    custoTotal = custoT1 + custoT2 + custoT3 + custoAdicionalNumerico;
   }
 
   return (
@@ -328,12 +329,13 @@ function App() {
       {/* Input de custo adicional */}
       <div>
         <label className="label-config">Custo adicional: </label>
-        <input
-          className="input-config"
-          type="number"
-          value={custoAdicional}
-          onChange={(event) => setCustoAdicional(Number(event.target.value))}
-        />
+          <input
+            className="input-config"
+            type="text"
+            inputMode="decimal"
+            value={custoAdicional}
+            onChange={(event) => setCustoAdicional(event.target.value)}
+          />
       </div>
       
       <p className="custo-total">O custo total é: {custoTotal}</p>
