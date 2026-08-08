@@ -88,12 +88,20 @@ Acesse em `http://localhost:5173`
 src/
 ├── App.jsx              # Componente principal com os dois times
 ├── App.css              # Estilos dos componentes
+├── duvidas.md           # Arquivo que contém as dúvidas
 ├── components/
 │   └── BuscaPersonagem.js   # Responsável pela busca de personagens
 ├── data/
 │   └── personagem.js   # Lista de personagens, cones, regras de tier e regras adicionais
+└── styles/
+│   └── base.css # Animações
+│   └── form.css # Fontes de texto
+│   └── layout.css 
+│   └── components/
+│       └── modals.css
+│       └── slots.css
 └── utils/
-    └── calculos.js     # Lógica de cálculo de custo
+│   └── calculos.js     # Lógica de cálculo de custo
 ```
 
 ---
