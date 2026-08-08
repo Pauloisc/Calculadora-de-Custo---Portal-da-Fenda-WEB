@@ -22,11 +22,60 @@
   animation: fadeIn 0.3s ease-out forwards;
 }
 
+/* Fundo escuro transparente que aparecerá ao abrir modais/overlays */
+.overlay-duvidas {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
 /* Container interno da imagem/conteúdo */
 .modal-conteudo {
   max-height: 90vh;
   max-width: 90vw;
   overflow-y: auto;
+}
+
+/* centraliza a tabela no container */
+.modal-conteudo table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px auto;      
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* centraliza o texto dentro de cada célula */
+.modal-conteudo th,
+.modal-conteudo td {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  text-align: center;      
+}
+
+.modal-conteudo th {
+  background-color: #28134B;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.modal-conteudo td {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+.modal-conteudo tr:nth-child(even) td {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* Alinhamento do texto */
+.modal-conteudo p {
+  text-align: justify;
+  line-height: 1.6;
 }
 
 /* Imagem responsiva (funciona para quadrada, vertical ou horizontal) */
@@ -47,17 +96,34 @@
   z-index: 10000;
 }
 
-
-.btn-eidolonimpacto {
+.btn-mostrarduvidas {
   background-color: #28134B;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 6px 14px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   cursor: pointer;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.btn-eidolonimpacto {
+  background-color: #28134B;
+  color: #ffffff;
+  padding: 6px 14px; 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
@@ -65,26 +131,26 @@
 .btn-tierlist {
   background-color: #28134B;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 6px 14px; 
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   cursor: pointer;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.85rem;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-parceirosequipe {
   background-color: #28134B;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 6px 14px; 
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   cursor: pointer;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.85rem;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 

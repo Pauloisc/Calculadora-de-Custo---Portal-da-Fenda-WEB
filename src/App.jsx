@@ -8,6 +8,9 @@ import { useState } from 'react';
 import { personagens, cones } from './data/personagem';
 import { calcularCustoTime } from './utils/calculos';
 import { BuscaPersonagem } from './components/BuscaPersonagem';
+import ReactMarkdown from 'react-markdown';
+import duvidasContent from './duvidas.md?raw';
+import remarkGfm from 'remark-gfm';
 
 const timeInicial = [
   { personagem: "Nada", eidolons: 0, cone: "Nada", sobreposicao: 1 },
@@ -25,6 +28,7 @@ function App() {
   const [mostrarTierList, setMostrarTierList] = useState(false);
   const [mostrarParceirosEquipe, setMostrarParceirosEquipe] = useState(false);
   const [mostrarEidolonImpacto, setMostrarEidolonImpacto] = useState(false);
+  const [mostrarDuvidas, setMostrarDuvidas] = useState(false);
 
   const limparTime1 = () => {setTime1(timeInicial);};
   const limparTime2 = () => {setTime2(timeInicial);};
@@ -87,6 +91,17 @@ function App() {
         className= 'slot-logo'
       />
       <div className="times-wrapper">
+
+      <button className="btn-mostrarduvidas" onClick={() => setMostrarDuvidas(true)}>?</button>
+
+      {mostrarDuvidas &&(
+        <div className="overlay-duvidas">
+          <div className="modal-conteudo">
+            <button className="btn-fechar-modal" onClick={() => setMostrarDuvidas(false)}>✕</button>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{duvidasContent}</ReactMarkdown>
+          </div>
+        </div>
+      )}
         
         {/* Bloco do Time 1 */}
         <div className="time-section">
