@@ -142,6 +142,8 @@ Se sua dúvida não foi respondida aqui, procure os organizadores do evento no s
 
 [Discord do Mimzy](https://discord.gg/27u7uRpuH)
 
+---
+
 # Créditos
 
 **@whitezs (Criador do evento, ADM e desenvolvedor do site)**
