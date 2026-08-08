@@ -23,6 +23,8 @@ function App() {
   const [custoAdicional, setCustoAdicional] = useState(0);
   const [qtdTimes, setQtdTimes] = useState(1);
   const [mostrarTierList, setMostrarTierList] = useState(false);
+  const [mostrarParceirosEquipe, setMostrarParceirosEquipe] = useState(false);
+  const [mostrarEidolonImpacto, setMostrarEidolonImpacto] = useState(false);
 
   const limparTime1 = () => {setTime1(timeInicial);};
   const limparTime2 = () => {setTime2(timeInicial);};
@@ -322,17 +324,45 @@ function App() {
       <p className="custo-total">O custo total é: {custoTotal}</p>
 
       <div className="bottom-buttons-container">
+        <button className="btn-eidolonimpacto" onClick={() => setMostrarEidolonImpacto(true)}>Eidolons de Impacto</button>
         <button className="btn-tierlist" onClick={() => setMostrarTierList(true)}>Tier List</button>
+        <button className="btn-parceirosequipe" onClick={() => setMostrarParceirosEquipe(true)}>Parceiros de Equipe</button>
       </div>
 
+      {mostrarEidolonImpacto && (
+        <div className="overlay-botoes">
+          <div className="modal-conteudo">
+            <button className="btn-fechar-modal" onClick={() => setMostrarEidolonImpacto(false)}>✕</button>
+            <img 
+              src="https://lh3.googleusercontent.com/d/1oia2JE25RIKyxV2nncDaasr8vMWhZ8dw"
+              alt='Eidolons de Impacto'
+              className= 'modal-img'
+            />
+          </div>
+        </div>
+      )}
+
       {mostrarTierList &&(
-        <div className="overlay-tier-list">
-          <div className="tela-tier-list">
-            <button className="btn-fechar-tierlist" onClick={() => setMostrarTierList(false)}>✕</button>
+        <div className="overlay-botoes">
+          <div className="modal-conteudo">
+            <button className="btn-fechar-modal" onClick={() => setMostrarTierList(false)}>✕</button>
             <img 
               src="https://lh3.googleusercontent.com/d/1GeEnm96H__AKm8YydyZwgOnh5xJkVXa0"
               alt='Tier list do Portal da Fenda'
-              className= 'img-tier-list'
+              className= 'modal-img'
+            />
+          </div>
+        </div>
+      )}
+
+      {mostrarParceirosEquipe && (
+        <div className="overlay-botoes">
+          <div className="modal-conteudo">
+            <button className="btn-fechar-modal" onClick={() => setMostrarParceirosEquipe(false)}>✕</button>
+            <img 
+              src="https://lh3.googleusercontent.com/d/1uzQoxG731cDEhDNrnde-rMlNk8UtXfuV"
+              alt='Parceiros de equipe'
+              className= 'modal-img'
             />
           </div>
         </div>
