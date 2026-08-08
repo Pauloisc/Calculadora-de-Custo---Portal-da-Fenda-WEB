@@ -92,16 +92,16 @@ src/
 ├── components/
 │   └── BuscaPersonagem.js   # Responsável pela busca de personagens
 ├── data/
-│   └── personagem.js   # Lista de personagens, cones, regras de tier e regras adicionais
+│   └── personagem.js    # Lista de personagens, cones, regras de tier e regras adicionais
 └── styles/
-│   └── base.css # Animações
-│   └── form.css # Fontes de texto
-│   └── layout.css 
+│   └── base.css         # Animações
+│   └── form.css         # Fontes de texto
+│   └── layout.css       # Layouts principais da tela
 │   └── components/
-│       └── modals.css
-│       └── slots.css
+│       └── modals.css   # Modals dos botões
+│       └── slots.css    # Slots de elementos
 └── utils/
-│   └── calculos.js     # Lógica de cálculo de custo
+│   └── calculos.js      # Lógica de cálculo de custo
 ```
 
 ---
