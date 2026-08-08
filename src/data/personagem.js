@@ -117,10 +117,16 @@ export const EIDOLON_SPIKE = {
     {nome: "Himeko Nova", custo: 1},
     {nome: "Phainon", custo: 1} , 
     {nome: "Silver Wolf 999", custo: 1},
-    {nome: "Welt", custo: 0.5},
   ],
-  E4: [
-    {nome: "Welt", custo: 0.5},
-  ],
+  E4: [],
   E6: [],
 }
+
+export const EIDOLON_EXCEPTIONS = {
+  E1: ["Welt", "Trailblazer", "Himeko", "Bronya"],
+  E2: ["Trailblazer", "Himeko", "Bronya"],
+  E3: ["Welt", "Trailblazer", "Himeko", "Bronya"],
+  E4: ["Trailblazer", "Himeko", "Bronya"],
+  E5: ["Welt", "Trailblazer", "Himeko", "Bronya"],
+  E6: ["Welt", "Trailblazer", "Himeko", "Bronya"],
+};

@@ -1,28 +1,40 @@
-import { personagens, TIER_RULES, cones, EIDOLON_SPIKE } from '../data/personagem';
+import { personagens, TIER_RULES, cones, EIDOLON_SPIKE, EIDOLON_EXCEPTIONS } from '../data/personagem';
 
-export function calcularCustoPersonagem(nome, eidolons){
-    const personagemEncontrado = personagens.find(p => p.nome === nome);
-    let eidolonSpike = 0
-    let custoEidolons = 0
-    if (!personagemEncontrado) {return 0;}
-    const regrasPersonagem = TIER_RULES[personagemEncontrado.tier];
+export function calcularCustoPersonagem(nome, eidolons) {
+  const personagemEncontrado = personagens.find(p => p.nome === nome);
+  if (!personagemEncontrado) return 0;
 
-    for (let nivel = 1; nivel <= eidolons; nivel++) {
-        const chave = `E${nivel}`;
-        const spikeEncontrado = EIDOLON_SPIKE[chave]?.find(item => item.nome === personagemEncontrado.nome);
-        if(spikeEncontrado){ eidolonSpike += spikeEncontrado.custo; }
-        const eTierAlto = personagemEncontrado.tier === "A" || personagemEncontrado.tier === "S" || personagemEncontrado.tier === "Z";
-        if ((nivel === 3 || nivel === 5) && eTierAlto) {
-            custoEidolons += 0.5;
-        } else {
-            custoEidolons += regrasPersonagem.eidolon;
-        }
-    }
-    if (personagemEncontrado.nome === "Trailblazer" || personagemEncontrado.nome === "Himeko" || personagemEncontrado.nome === "Bronya") {
-        return 0;
+  const regrasPersonagem = TIER_RULES[personagemEncontrado.tier];
+  
+  // Se o custo base do tier for 0 ele já começa zerado aqui sem precisar citar nome nenhum.
+  let custoBase = regrasPersonagem ? regrasPersonagem.base : 0;
+  let eidolonSpike = 0;
+  let custoEidolons = 0;
+
+  for (let nivel = 1; nivel <= eidolons; nivel++) {
+    const chave = `E${nivel}`;
+
+    // Soma o Spike se houver
+    const spikeEncontrado = EIDOLON_SPIKE[chave]?.find(item => item.nome === personagemEncontrado.nome);
+    if (spikeEncontrado) {
+      eidolonSpike += spikeEncontrado.custo;
     }
 
-    return regrasPersonagem.base + custoEidolons + eidolonSpike;
+    // Checa se o personagem ignora o custo deste nível de Eidolon
+    const ehExcecao = EIDOLON_EXCEPTIONS[chave]?.includes(personagemEncontrado.nome);
+
+    if (!ehExcecao) {
+      const eTierAlto = ["A", "S", "Z"].includes(personagemEncontrado.tier);
+
+      if ((nivel === 3 || nivel === 5) && eTierAlto) {
+        custoEidolons += 0.5;
+      } else {
+        custoEidolons += regrasPersonagem.eidolon;
+      }
+    }
+  }
+
+  return custoBase + custoEidolons + eidolonSpike;
 }
 
 export function calcularCustoCone(nomeCone, sobreposicao, nomePersonagem){
