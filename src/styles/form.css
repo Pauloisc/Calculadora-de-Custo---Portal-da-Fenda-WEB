@@ -1,0 +1,31 @@
+/* Configuração para labels externas */
+.label-config {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+}
+
+/* Configuracao do label de custo total */
+.custo-total {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* Configuracao do label de custo do time */
+.custo-time {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Configuração dos textos do botão de selecionar a quantidade de times */
+.select-config {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+}
+
+/* Configuração do texto de input para custo adicional */
+.input-config {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+}

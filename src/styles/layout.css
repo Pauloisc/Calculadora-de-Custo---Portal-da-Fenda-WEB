@@ -1,0 +1,81 @@
+/* Container Principal do App */
+.app-container {
+  position: relative;
+  background: linear-gradient(-45deg, #0D0814, #1A0B2E, #31145A, #4A157D);
+  background-size: 400% 400%;
+  color: #ffffff;   
+  min-height: 100vh;    
+  padding: 6px 24px 24px 24px;    
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  animation: gradiente-animado 25s ease infinite;
+}
+
+/* Centraliza exclusivamente o título principal do site */
+.app-container h1 {
+  text-align: center;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
+/* ESTRUTURA DOS TIMES (CONTAINER WRAPPER) */
+/* Celular por padrão: Empilhado verticalmente */
+.times-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;          
+  width: 100%;
+  max-width: 1200px; 
+  margin-top: 16px;   
+}
+
+/* Monitor / PC (Telas acima de 768px) */
+@media (min-width: 800px) {
+  .times-wrapper {
+    flex-direction: row;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 40px; 
+  }
+}
+
+/* Seção de cada Time (Agrupa Título, Custo e o Bloco Cinza) */
+.time-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+}
+
+.time-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 16px;
+  margin-top: 12px; 
+  margin-bottom: 24px;
+  width: 100%;
+  border-radius: 8px; 
+  background-color: #28134b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+}
+
+/* Botoes de exportar e limpar time */
+.time-buttons-container {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-top: 4px;
+}
+
+/* Configuração dos textos dos botões "Exportar" e "Limpar" */
+.time-buttons-container button {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}

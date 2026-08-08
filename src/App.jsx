@@ -1,4 +1,9 @@
-import './App.css'
+import './styles/base.css';
+import './styles/layout.css';
+import './styles/form.css';
+import './styles/components/slots.css';
+import './styles/components/modals.css';
+
 import { useState } from 'react';
 import { personagens, cones } from './data/personagem';
 import { calcularCustoTime } from './utils/calculos';

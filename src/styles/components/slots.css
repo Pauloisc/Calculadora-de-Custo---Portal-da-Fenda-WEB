@@ -1,0 +1,45 @@
+/* ESTILO DO CARD DO SLOT (INTERNO) */
+.slot-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  padding: 14px;
+  gap: 8px;      
+  min-width: 0; 
+  width: 100%;        
+}
+
+/* Inputs e Selects dentro dos Slots */
+.slot-container select,
+.slot-container input {
+  width: 100%;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+}
+
+/* Estilo da Imagem da logo */
+.slot-logo {
+  width: 200px;          
+  height: 200px;         
+  object-fit: cover;
+  display: block;
+  margin: 20px auto 5px auto;
+}
+
+/* Estilo da Imagem / Avatar */
+.slot-avatar {
+  width: 120px;          
+  height: 120px;         
+  object-fit: cover;     
+  border-radius: 4px;    
+  border: 2px solid #ffffff; 
+}
+
+/* Estilo de fonte dos labs dos slots*/
+.slot-container label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #e0d9f5;
+}
