@@ -136,11 +136,13 @@ Se sua dúvida não foi respondida aqui, procure os organizadores do evento no s
 
 [Desafios de combate: Memórias do Caos](https://docs.google.com/document/d/1kn-mWQgc3HoeY6_JBkVCF5xXM7AsmwfbaUDo3e32cSo/edit?usp=sharing)
 
-[Desafios de combate: Sombra Apocalíptica] Em desenvolvimento
+[Desafios de combate: Sombra Apocalíptica](https://docs.google.com/document/d/1yoX_8J6ilGvmpbeXpAxPesvfK3z5b-MQKdrs8yJ8fw4/edit?tab=t.0)
 
 [Personagens dos participantes](https://drive.google.com/drive/u/1/folders/1Gv4OiJMi6DpB5BoWumRkZLLjSmp6IwxD)
 
 [Discord do Mimzy](https://discord.gg/27u7uRpuH)
+
+[Repositório do Site](https://github.com/Pauloisc/Calculadora-de-Custo---Portal-da-Fenda-WEB)
 
 ---
 
@@ -160,7 +162,7 @@ Se sua dúvida não foi respondida aqui, procure os organizadores do evento no s
 
 **@leo_101203 (Auxiliar)**
 
-**@pedro_12we (Auxiliar)**
+**@jpedro_12we (Auxiliar)**
 
 **@guigui6035 (Auxiliar)**
 
