@@ -5,7 +5,7 @@ import './styles/components/slots.css';
 import './styles/components/modals.css';
 
 import { useState } from 'react';
-import { calcularCustoTime } from './utils/calculos';
+import { calcularCustoTime, calcularEficiencia } from './utils/calculos';
 import { TimeSection } from './components/TimeSection';
 import ReactMarkdown from 'react-markdown';
 import duvidasContent from './duvidas.md?raw';
@@ -29,12 +29,27 @@ function App() {
   const [mostrarEidolonImpacto, setMostrarEidolonImpacto] = useState(false);
   const [mostrarDuvidas, setMostrarDuvidas] = useState(false);
 
-
+  const [custoValorDeAcao, setValorDeAcao] = useState(0);
+  const [mostrarValorDeAcao, setVA] = useState(false);
+  const [timeSelecionado, setTimeSelecionado] = useState(1);
 
   let custoTotal = 0;
   let custoT1 = calcularCustoTime(time1)
   let custoT2 = calcularCustoTime(time2)
   let custoT3 = calcularCustoTime(time3)
+
+  let eficienciaValor = 0
+  let custoDoTimeEscolhido = 0
+
+  if (timeSelecionado == 1){
+    custoDoTimeEscolhido = custoT1
+  }
+  else if (timeSelecionado == 2){
+    custoDoTimeEscolhido = custoT2
+  }
+  else if (timeSelecionado == 3){
+    custoDoTimeEscolhido = custoT3
+  }
 
   const custoAdicionalNumerico = custoAdicional === "" || custoAdicional === "-" ? 0 : Number(custoAdicional.replace(",", ".")) || 0;
   if (qtdTimes === 1) {
@@ -57,7 +72,7 @@ function App() {
       <button className="btn-mostrarduvidas" onClick={() => setMostrarDuvidas(true)}>?</button>
 
       {mostrarDuvidas &&(
-        <div className="overlay-duvidas">
+        <div className="overlay-escura">
           <div className="modal-conteudo">
             <button className="btn-fechar-modal" onClick={() => setMostrarDuvidas(false)}>✕</button>
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{duvidasContent}</ReactMarkdown>
@@ -141,6 +156,35 @@ function App() {
               alt='Parceiros de equipe'
               className= 'modal-img'
             />
+          </div>
+        </div>
+      )}
+
+      <button className="btn-eficiencia" onClick={() => setVA(true)}>Eficiência</button>
+
+      {mostrarValorDeAcao && (
+        <div className="overlay-escura">
+          <div className="modal-conteudo">
+            <button className="btn-fechar-modal" onClick={() => setVA(false)}>✕</button>
+              <div>
+                <label className="label-config">Valor de ação: </label>
+                  <input
+                    className="input-config"
+                    type="text"
+                    inputMode="number"
+                    value={custoValorDeAcao}
+                    onChange={(event) => setValorDeAcao(event.target.value)}
+                  />
+                
+                <select className="select-config" value={timeSelecionado} onChange={(event) => { setTimeSelecionado(Number(event.target.value)) }}>
+                  <option value={1}>Time 1</option>
+                  { qtdTimes >= 2 && <option value={2}>Time 2</option> }
+                  { qtdTimes >= 3 && <option value={3}>Time 3</option> }
+                </select>
+
+                <p className="eficiencia-valor">Eficiência: {calcularEficiencia(custoValorDeAcao, custoDoTimeEscolhido)}</p>
+                
+              </div>
           </div>
         </div>
       )}

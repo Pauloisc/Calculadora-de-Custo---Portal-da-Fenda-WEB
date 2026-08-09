@@ -66,3 +66,7 @@ export function calcularCustoTime(time){
     if (temParceriaAtiva) {custoTime += 1;}
     return custoTime;
 }
+
+export function calcularEficiencia(valorDeAcao, custoTime){
+    return (valorDeAcao - (50 * custoTime))
+}
