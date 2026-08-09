@@ -110,17 +110,14 @@ A Eficiência mostra o quão bem seu time performou **em relação ao custo que 
 O cálculo é feito assim:
 
 
-**Eficiência = VA - (Custo × 50)**
+**Eficiência = Pontuação do Nódulo - (Custo × 50)**
+
+**Exemplo:** se seu time teve um VA de 1700, o que resulta numa pontuação no nódulo de 3700, e um custo de 3, a eficiência será:
+
+**3700 - (3 × 50) = 3700 - 150 = 3550**
 
 
-Onde **VA** é o "Valor de Ação" alcançado pelo seu time na batalha (esse valor você mesmo informa, com base no resultado da partida).
-
-**Exemplo:** se seu time teve um VA de 1700 e um custo de 3, a eficiência será:
-
-**1700 - (3 × 50) = 1700 - 150 = 1550**
-
-
-Esse número ajuda a comparar times de forma mais justa: não importa só quem teve o maior VA, mas sim quem conseguiu o melhor resultado.
+Esse número ajuda a comparar times de forma mais justa: não importa só quem teve a maior pontuação no nódulo, mas sim quem conseguiu o melhor resultado de acordo com o custo.
 
 ---
 

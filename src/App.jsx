@@ -167,7 +167,7 @@ function App() {
           <div className="modal-conteudo">
             <button className="btn-fechar-modal" onClick={() => setVA(false)}>✕</button>
               <div>
-                <label className="label-config">Valor de ação: </label>
+                <label className="label-config">Pontuação no nódulo: </label>
                   <input
                     className="input-config"
                     type="text"
