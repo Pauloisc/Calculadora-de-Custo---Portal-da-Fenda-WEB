@@ -182,7 +182,7 @@ function App() {
                   { qtdTimes >= 3 && <option value={3}>Time 3</option> }
                 </select>
 
-                <p className="eficiencia-valor">Eficiência: {calcularEficiencia(custoValorDeAcao, custoDoTimeEscolhido)}</p>
+                <p className="eficiencia-valor">Eficiência: {calcularEficiencia(custoValorDeAcao, custoDoTimeEscolhido, custoAdicionalNumerico)}</p>
                 
               </div>
           </div>

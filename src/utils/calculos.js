@@ -67,6 +67,6 @@ export function calcularCustoTime(time){
     return custoTime;
 }
 
-export function calcularEficiencia(valorDeAcao, custoTime){
-    return (valorDeAcao - (50 * custoTime))
+export function calcularEficiencia(valorDeAcao, custoTime, custoAdicional){
+    return (valorDeAcao - (50 * (custoTime + custoAdicional)))
 }
