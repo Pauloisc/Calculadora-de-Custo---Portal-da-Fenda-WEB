@@ -1,4 +1,4 @@
-# 🌀 Portal da Fenda — Calculadora de Custos
+# Portal da Fenda — Calculadora de Custos
 
 Calculadora de custos de times para o evento **Portal da Fenda**, um evento de PvP para o jogo **Honkai: Star Rail** feito para o servidor do Discord do criador de conteúdo [Mimzy](https://www.youtube.com/@mimzy_official)
 
@@ -8,7 +8,7 @@ Permite montar dois times com até 4 personagens cada, configurando eidolons, co
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - Seleção de personagens com foto
 - Configuração de **eidolons** (E0–E6) por personagem
@@ -60,7 +60,7 @@ Permite montar dois times com até 4 personagens cada, configurando eidolons, co
 
 > Certos personagens, em Eidolons específicas, por possuírem um aumento de poder considerável, possuem o seu custo aumentado em 1 quando utilizadas na composição.
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
 - CSS puro com layout responsivo (Flexbox + Grid)
@@ -68,7 +68,7 @@ Permite montar dois times com até 4 personagens cada, configurando eidolons, co
 
 ---
 
-## 🚀 Rodando localmente
+## Rodando localmente
 
 ```bash
 # Instale as dependências
@@ -106,6 +106,6 @@ src/
 
 ---
 
-## 👤 Autor
+## Autor
 
 Desenvolvido por **Paulo Ítalo** como ferramenta de apoio para a comunidade do Discord do youtuber [Mimzy](https://www.youtube.com/@mimzy_official).
