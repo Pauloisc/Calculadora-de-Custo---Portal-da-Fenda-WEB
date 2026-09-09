@@ -112,7 +112,7 @@ export const cones = {
 
 export const EIDOLON_SPIKE = {
   E1: [
-    {nome: "Robin Sumeretto", custo: 1},
+    {nome: "Robin", custo: 1},
     {nome: "Gilgamesh", custo: 1},
     {nome: "Seele", custo: 1},
   ],
