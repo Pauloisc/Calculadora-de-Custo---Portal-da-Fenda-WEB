@@ -35,7 +35,7 @@ Permite montar dois times com até 4 personagens cada, configurando eidolons, co
 | D | 0 | 0 |
 | E | -0.5 | 0 |
 | F | -1 | 0 |
-| Slot vazio | -2 | — |
+| Slot vazio | -2.5 | — |
 
 ### Cones de Luz
 
