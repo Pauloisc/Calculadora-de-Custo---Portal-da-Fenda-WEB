@@ -7,7 +7,7 @@ export const TIER_RULES = {
   D: { base: 0, eidolon: 0.25 },
   E: { base: -0.5, eidolon: 0 },
   F: { base: -1, eidolon: 0 },
-  Nada: { base: -2, eidolon: 0},
+  Nada: { base: -2.5, eidolon: 0},
 };
 
 export const personagens = [
